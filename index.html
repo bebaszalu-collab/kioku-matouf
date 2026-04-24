@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>＃２『記憶を纏う』－親子でたどる、記憶の展示－</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:  #0d2240;
+      --ocean: #1a4a7a;
+      --sky:   #3a7cbf;
+      --mist:  #9fc7e8;
+      --foam:  #dceef9;
+      --white: #f8fbff;
+      --text:  #1c2c3c;
+      --sub:   #4a6070;
+      --gold:  #c9a96e;
+      --link:  #2563a8;
+      --warn:  #f5f0e8;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Mincho ProN','Yu Mincho','Georgia',serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* ─── リンク共通 ─── */
+    a { color: var(--link); }
+    a:hover { opacity: .8; }
+
+    /* ─── CTAリンク（青字） ─── */
+    .cta-link {
+      display: inline-block;
+      color: var(--link);
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+    .cta-link:hover { opacity: .75; }
+
+    /* ─── ヒーロー ─── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 4rem 1.5rem 6rem;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--ocean) 60%, #2a6496 100%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 100px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .hero-light {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 50% 70%, rgba(74,143,196,.35) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 20% at 30% 40%, rgba(159,199,232,.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      font-size: .72rem; letter-spacing: .5em;
+      color: var(--mist); margin-bottom: 1rem;
+      text-transform: uppercase; opacity: .85;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem,8vw,5.5rem);
+      font-weight: 400; color: #fff;
+      letter-spacing: .15em; line-height: 1.15;
+      text-shadow: 0 2px 30px rgba(0,0,0,.4);
+    }
+    .hero-subtitle {
+      margin-top: 1rem;
+      font-size: clamp(.85rem,2.5vw,1.1rem);
+      color: var(--mist); letter-spacing: .28em; font-weight: 300;
+    }
+    .hero-divider {
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin: 2rem auto; opacity: .8;
+    }
+    .hero-date {
+      font-size: clamp(1rem,3vw,1.3rem);
+      color: var(--foam); letter-spacing: .18em;
+    }
+    .hero-venue {
+      margin-top: .5rem;
+      font-size: clamp(.75rem,2vw,.9rem);
+      color: var(--mist); letter-spacing: .1em;
+    }
+    .hero-free {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: .35em 1.2em;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: .82rem; letter-spacing: .3em;
+      border-radius: 2px;
+    }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: inline-block;
+      padding: .9em 2.8em;
+      background: var(--gold); color: var(--navy);
+      text-decoration: none;
+      font-size: .95rem; letter-spacing: .2em;
+      font-weight: 600; border-radius: 2px;
+      transition: opacity .3s, transform .2s;
+    }
+    .hero-cta:hover { opacity: .88; transform: translateY(-2px); }
+
+    /* ─── セクション共通 ─── */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 860px; margin: 0 auto; }
+    .section-label {
+      font-size: .68rem; letter-spacing: .5em;
+      color: var(--sky); text-transform: uppercase; margin-bottom: .6rem;
+    }
+    .section-title {
+      font-size: clamp(1.4rem,4vw,2rem);
+      font-weight: 400; letter-spacing: .06em;
+      color: var(--navy); line-height: 1.4;
+    }
+    .section-divider {
+      width: 36px; height: 2px;
+      background: var(--sky); margin: 1.2rem 0 2rem;
+    }
+    .section-divider.center { margin-left: auto; margin-right: auto; }
+    .text-center { text-align: center; }
+
+    /* ─── 注意書き ─── */
+    .caution-bar {
+      background: var(--warn);
+      border-left: 4px solid var(--gold);
+      padding: 1.2rem 1.6rem;
+      font-size: .88rem; color: var(--sub);
+      margin: 2.5rem 0;
+      line-height: 1.8;
+    }
+
+    /* ─── ストーリー ─── */
+    .story-section { background: var(--white); }
+    .story-lead {
+      font-size: clamp(1rem,2.5vw,1.15rem);
+      color: var(--sub); line-height: 2.1; margin-bottom: 1.5rem;
+    }
+    .story-quote {
+      font-size: clamp(1.2rem,3vw,1.5rem);
+      color: var(--navy); font-style: italic;
+      letter-spacing: .05em;
+      border-left: 3px solid var(--sky);
+      padding-left: 1.2rem; margin: 1.5rem 0;
+      line-height: 1.6;
+    }
+
+    /* ─── 見出しバナー ─── */
+    .banner-section {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--ocean) 100%);
+      text-align: center; padding: 4rem 1.5rem;
+    }
+    .banner-section .section-title { color: var(--white); }
+    .banner-section .section-label { color: var(--mist); }
+    .banner-section .section-divider { background: var(--gold); margin-left: auto; margin-right: auto; }
+    .banner-body {
+      color: rgba(220,238,249,.85);
+      font-size: clamp(.9rem,2vw,1.05rem);
+      max-width: 640px; margin: 0 auto;
+      line-height: 2.1;
+    }
+
+    /* ─── ワークショップ ─── */
+    .ws-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
+    .ws-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem; margin-top: 2.5rem;
+    }
+    .ws-card {
+      background: var(--white);
+      border: 1px solid rgba(74,143,196,.18);
+      border-top: 3px solid var(--sky);
+      padding: 1.6rem 1.5rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(13,34,64,.07);
+    }
+    .ws-icon { font-size: 1.4rem; margin-bottom: .6rem; }
+    .ws-name { font-size: 1rem; color: var(--navy); font-weight: 600; margin-bottom: .3rem; }
+    .ws-age { font-size: .76rem; color: var(--sky); letter-spacing: .15em; margin-bottom: .6rem; }
+    .ws-desc { font-size: .88rem; color: var(--sub); line-height: 1.8; }
+    .ws-profile {
+      margin-top: .8rem; padding-top: .8rem;
+      border-top: 1px dashed rgba(74,143,196,.25);
+      font-size: .82rem; color: var(--sub);
+    }
+
+    /* ─── タイムテーブル ─── */
+    .tt-section { background: var(--white); }
+    .tt-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem; margin-top: 2.5rem;
+    }
+    @media (max-width: 600px) { .tt-cols { grid-template-columns: 1fr; } }
+    .tt-day-title {
+      font-size: 1rem; font-weight: 600;
+      color: var(--navy); letter-spacing: .2em;
+      padding: .6rem 1rem;
+      background: var(--foam);
+      border-left: 4px solid var(--sky);
+      margin-bottom: 1rem;
+    }
+    .tt-info {
+      font-size: .78rem; color: var(--sub);
+      margin-bottom: .8rem; letter-spacing: .05em;
+    }
+    .tt-row {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: .5rem; padding: .5rem 0;
+      border-bottom: 1px solid rgba(74,143,196,.1);
+      font-size: .88rem;
+    }
+    .tt-time { color: var(--sky); font-weight: 600; white-space: nowrap; }
+    .tt-event { color: var(--text); }
+    .tt-anytime {
+      margin-top: .8rem; font-size: .83rem;
+      color: var(--sub); font-style: italic;
+    }
+
+    /* ─── 応援コメント ─── */
+    .comments-section { background: linear-gradient(180deg, var(--white) 0%, var(--foam) 100%); }
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem; margin-top: 2.5rem;
+    }
+    .comment-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 1.8rem 1.6rem;
+      box-shadow: 0 4px 24px rgba(13,34,64,.07);
+      position: relative;
+    }
+    .comment-card::before {
+      content: '❝';
+      position: absolute; top: 1rem; right: 1.2rem;
+      font-size: 2.5rem; color: var(--foam);
+      line-height: 1;
+    }
+    .comment-person {
+      display: flex; align-items: flex-start;
+      gap: .8rem; margin-bottom: 1rem;
+    }
+    .comment-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--ocean), var(--sky));
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: .8rem; flex-shrink: 0;
+    }
+    .comment-name { font-size: .9rem; font-weight: 600; color: var(--navy); }
+    .comment-title { font-size: .76rem; color: var(--sub); margin-top: .2rem; }
+    .comment-text { font-size: .88rem; color: var(--sub); line-height: 1.9; }
+
+    /* ─── 記憶の解説 ─── */
+    .memory-section { background: var(--white); }
+    .memory-items {
+      display: flex; flex-direction: column; gap: .4rem;
+      margin: 1.2rem 0 1.8rem;
+    }
+    .memory-item {
+      display: flex; align-items: center; gap: .8rem;
+      font-size: .95rem; color: var(--sub);
+    }
+    .memory-item::before {
+      content: '✕';
+      color: #c05050; font-weight: 700; flex-shrink: 0;
+    }
+    .memory-highlight {
+      font-size: clamp(1rem,3vw,1.2rem);
+      color: var(--ocean); font-weight: 600;
+      background: var(--foam);
+      padding: 1.4rem 1.8rem;
+      border-left: 4px solid var(--sky);
+      margin: 2rem 0;
+      line-height: 1.8;
+    }
+
+    /* ─── 体験談 ─── */
+    .testimonials-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
+    .testimonial-list { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 2rem; }
+    .testimonial-card {
+      background: var(--white);
+      border-left: 3px solid var(--mist);
+      padding: 1.4rem 1.6rem;
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 2px 12px rgba(13,34,64,.05);
+    }
+    .testimonial-text {
+      font-size: .95rem; color: var(--text);
+      line-height: 2; font-style: italic;
+    }
+    .testimonial-who {
+      margin-top: .6rem;
+      font-size: .78rem; color: var(--sub); letter-spacing: .1em;
+    }
+
+    /* ─── 心理的安全 ─── */
+    .safety-section { background: var(--white); }
+    .safety-box {
+      background: var(--foam);
+      border: 1px solid rgba(74,143,196,.25);
+      border-radius: 6px;
+      padding: 2rem 2rem;
+      margin-top: 2rem;
+      font-size: .95rem; color: var(--sub); line-height: 2;
+    }
+
+    /* ─── 特別案内 ─── */
+    .online-section { background: linear-gradient(135deg, var(--navy) 0%, #1d5080 100%); }
+    .online-section .section-label { color: var(--mist); }
+    .online-section .section-title { color: var(--white); }
+    .online-section .section-divider { background: var(--gold); }
+    .online-body {
+      color: rgba(220,238,249,.85);
+      font-size: clamp(.9rem,2vw,1.02rem);
+      line-height: 2.1; max-width: 640px;
+    }
+    .online-list {
+      margin: 1rem 0 1.5rem 0;
+      padding-left: 0; list-style: none;
+    }
+    .online-list li {
+      padding: .35rem 0;
+      color: var(--foam);
+      font-size: .95rem;
+    }
+    .online-list li::before { content: '▶ '; color: var(--gold); }
+
+    /* ─── サポーター ─── */
+    .support-section { background: var(--white); }
+    .support-box {
+      background: linear-gradient(135deg, var(--foam) 0%, #eaf3fb 100%);
+      border: 1px solid rgba(74,143,196,.2);
+      border-radius: 6px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .support-box p { font-size: .95rem; color: var(--sub); line-height: 2; }
+
+    /* ─── 資金使途 ─── */
+    .fund-section { background: var(--white); }
+    .fund-bars { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
+    .fund-row { display: flex; align-items: center; gap: 1rem; }
+    .fund-label { font-size: .85rem; color: var(--sub); width: 10rem; flex-shrink: 0; }
+    .fund-bar-wrap { flex: 1; background: var(--foam); border-radius: 99px; height: 14px; overflow: hidden; }
+    .fund-bar { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--ocean), var(--sky)); }
+    .fund-pct { font-size: .85rem; font-weight: 600; color: var(--ocean); width: 3rem; text-align: right; }
+
+    /* ─── 次回予定 ─── */
+    .next-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.4rem; margin-top: 2rem;
+    }
+    .next-card {
+      background: var(--white);
+      border: 1px solid rgba(74,143,196,.18);
+      border-top: 3px solid var(--gold);
+      padding: 1.5rem; border-radius: 4px;
+    }
+    .next-no { font-size: .7rem; letter-spacing: .4em; color: var(--sky); margin-bottom: .3rem; }
+    .next-title { font-size: 1rem; color: var(--navy); font-weight: 600; }
+    .next-info { font-size: .85rem; color: var(--sub); margin-top: .4rem; }
+
+    /* ─── CTA大ブロック ─── */
+    .cta-section {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--ocean) 100%);
+      text-align: center; padding: 6rem 1.5rem;
+      position: relative; overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute; top: -2px; left: 0;
+      width: 100%; height: 80px;
+      background: var(--foam);
+      clip-path: ellipse(55% 100% at 50% 0%);
+    }
+    .cta-section .section-label { color: var(--mist); }
+    .cta-section .section-title { color: var(--white); }
+    .cta-section .section-divider { background: var(--gold); margin-left: auto; margin-right: auto; }
+    .cta-note { font-size: .95rem; color: var(--mist); margin-bottom: 2rem; line-height: 2; }
+    .cta-btn {
+      display: inline-block;
+      padding: 1em 3em;
+      background: var(--gold); color: var(--navy);
+      text-decoration: none;
+      font-size: 1rem; letter-spacing: .2em;
+      border-radius: 2px; font-weight: 700;
+      transition: opacity .3s, transform .2s;
+    }
+    .cta-btn:hover { opacity: .88; transform: translateY(-2px); }
+
+    /* ─── サポートメンバー ─── */
+    .member-section { background: var(--white); }
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem; margin-top: 2rem;
+    }
+    .member-item {
+      font-size: .85rem; color: var(--sub);
+      padding: .8rem 1rem;
+      background: var(--foam);
+      border-radius: 4px; line-height: 1.7;
+    }
+    .member-item a { font-size: .78rem; display: block; margin-top: .2rem; }
+
+    /* ─── プロフィール ─── */
+    .profile-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
+    .profile-box {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem;
+      align-items: start; margin-top: 2rem;
+    }
+    @media (max-width: 600px) { .profile-box { grid-template-columns: 1fr; } }
+    .profile-photo {
+      background: linear-gradient(135deg, var(--ocean), var(--sky));
+      border-radius: 6px; min-height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--foam); font-size: .85rem;
+      text-align: center; padding: 1.5rem;
+    }
+    .profile-name { font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: .3rem; }
+    .profile-org { font-size: .78rem; letter-spacing: .25em; color: var(--sky); margin-bottom: 1rem; }
+    .profile-text { font-size: .93rem; color: var(--sub); line-height: 2; }
+
+    /* ─── 夏帆メッセージ ─── */
+    .message-section { background: var(--white); }
+    .message-body {
+      font-size: clamp(.95rem,2vw,1.05rem);
+      color: var(--sub); line-height: 2.2;
+      border-left: 3px solid var(--sky);
+      padding-left: 1.5rem;
+    }
+
+    /* ─── FAQ / 質問 ─── */
+    .faq-section {
+      background: linear-gradient(160deg, var(--navy) 0%, #1d4f78 100%);
+      text-align: center; padding: 4rem 1.5rem;
+    }
+    .faq-section .section-title { color: var(--white); }
+    .faq-section .section-label { color: var(--mist); }
+    .faq-section .section-divider { background: var(--gold); margin-left:auto; margin-right:auto; }
+
+    /* ─── フッター ─── */
+    footer {
+      background: var(--navy);
+      text-align: center; padding: 2.5rem 1.5rem;
+      color: rgba(159,199,232,.55); font-size: .78rem; letter-spacing: .15em;
+    }
+    footer .f-org { color: var(--mist); font-size: .9rem; margin-bottom: .4rem; letter-spacing: .3em; }
+
+    /* ─── フェードイン ─── */
+    .fade-in {
+      opacity: 0; transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ─── 本文テキスト ─── */
+    .body-text {
+      font-size: clamp(.9rem,2.2vw,1rem);
+      color: var(--sub); line-height: 2.1;
+    }
+    .body-text + .body-text { margin-top: 1.2rem; }
+  </style>
+</head>
+<body>
+
+<!-- ==============================
+     HERO
+================================= -->
+<header class="hero">
+  <div class="hero-light"></div>
+  <p class="hero-badge">Event No.2 &nbsp;｜&nbsp; 2026.6.20–21</p>
+  <h1 class="hero-title">記憶を纏う</h1>
+  <p class="hero-subtitle">— 親子でたどる、記憶の展示 —</p>
+  <div class="hero-divider"></div>
+  <p class="hero-date">2026年6月20日（土）〜 6月21日（日）</p>
+  <p class="hero-venue">神奈川県 大和市 鶴間 1-9-17 &nbsp;BIG BLUE</p>
+  <p class="hero-venue">小田急江ノ島線 鶴間駅下車 徒歩3分</p>
+  <span class="hero-free">入場無料</span>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+     target="_blank" rel="noopener" class="hero-cta">申し込む</a>
+</header>
+
+<!-- ==============================
+     STORY OPENING
+================================= -->
+<section class="story-section">
+  <div class="container">
+    <div class="caution-bar fade-in">
+      ▶ 人によっては少し苦しくなるかも。読み進めるにあたっては、ご注意ください。
+    </div>
+    <p class="section-label fade-in">Story</p>
+    <h2 class="section-title fade-in">父の作業着から始まる、<br>家族の再生の物語。</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="story-quote fade-in">「お前、お前！！」<br>体がすくんで、その後、衝撃が走る。</p>
+    <p class="body-text fade-in">
+      憎いという気持ちと、徹底的に嫌ってやるという決意。<br>
+      思い返せば思い返すほど、胃がよじれるような感覚と、<br>
+      悲しさを抱えた怒りが、込み上げてくる。
+    </p>
+    <p class="body-text fade-in" style="margin-top:1.5rem;">
+      あなたを何度も足止めする「記憶」——<br>
+      それが、<strong>たった一枚の服で癒せるとしたら。</strong><br>
+      その服を手に取った瞬間、あなたの中の"時間"が静かに動き出すかもしれません。
+    </p>
+  </div>
+</section>
+
+<!-- ==============================
+     広島 → 神奈川
+================================= -->
+<section class="banner-section">
+  <div class="container">
+    <p class="section-label fade-in">From Hiroshima to Kanagawa</p>
+    <h2 class="section-title fade-in">広島で100人が涙した記憶、ふたたび。</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="banner-body fade-in">
+      地方都市・広島で100人を超える人々が涙した記憶の展示。<br>
+      6月20日（土）21日（日）神奈川県大和市で<strong>超体験型にグレードアップ</strong>して再び！<br><br>
+      昨年12月、広島で行われた展示では14名の親友にも語られない人生の物語が集まりました。
+      写真・文字・造形…それぞれから愛の複雑さと尊さ、自分や家族への慈しみを感じさせてもらい、
+      何度も心を揺さぶられました。<br><br>
+      しかし、私の中には1つの大きな後悔が残っています。<br>
+      それは——<strong>「気づいても、広げ・解釈し・表現できる場がなかった」</strong>こと。<br>
+      さらに、ギャラリーという性質上、お子さんと来場いただいてもゆっくり鑑賞できる環境ではなかった。<br><br>
+      そこで今回は大きく新しい試みを取り入れました！
+    </p>
+  </div>
+</section>
+
+<!-- ==============================
+     ワークショップ
+================================= -->
+<section class="ws-section">
+  <div class="container">
+    <p class="section-label fade-in">Workshop</p>
+    <h2 class="section-title fade-in">鑑賞だけで帰さない、<br>表現者になってしまう場を設計しました。</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="body-text fade-in">
+      6月・神奈川県で行われる第２回『記憶を纏う』展示では、15名の作家による人生ストーリー作品展示に加え、
+      感じ・悩み・受け止め・表現することに特化した<strong>５つのワークショップ</strong>を同時開催いたします。<br><br>
+      『記憶を纏う』では、あえて鑑賞者を鑑賞者のままでは帰しません。<br>
+      <strong>鑑賞者から表現者へ</strong>と、ゆるやかに、しかし確実に変化しうる場所として設計しました。<br>
+      ここにくれば、何かが変わる。そんなパワースポットのような場所で、お待ちしています。
+    </p>
+
+    <div class="ws-grid">
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🩰</div>
+        <p class="ws-name">心身解放バレエ「ワタシと演じる」</p>
+        <p class="ws-age">10歳程度より参加可能</p>
+        <p class="ws-desc">身体を通じて記憶と向き合い、表現する体験型ワークショップ。</p>
+        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">📖</div>
+        <p class="ws-name">ナラティブ絵本®︎（ミニ）</p>
+        <p class="ws-age">15歳程度より参加可能</p>
+        <p class="ws-desc">自分の物語を絵本にする、語りと創造のワークショップ。</p>
+        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🎨</div>
+        <p class="ws-name">こども表現ワーク<br>「かいたり、みにつけたり、パチンパチン」</p>
+        <p class="ws-age">子どものみ参加可能</p>
+        <p class="ws-desc">子どもが描いて、着て、感じる、のびのびとした表現の場。</p>
+        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🔥</div>
+        <p class="ws-name">モヤモヤ燃やしちゃおう</p>
+        <p class="ws-age">誰でも参加可</p>
+        <p class="ws-desc">心のモヤモヤを言葉にして、一緒に解放するワーク。</p>
+        <p class="ws-profile">（随時開催）</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🍪</div>
+        <p class="ws-name">哲学少女の問いかけクッキー屋さん</p>
+        <p class="ws-age">誰でも参加可</p>
+        <p class="ws-desc">問いかけとクッキーで、深い対話が始まる不思議な体験。</p>
+        <p class="ws-profile">（随時開催）</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🎵</div>
+        <p class="ws-name">アカペラ LIVE &amp; ギター LIVE</p>
+        <p class="ws-age">誰でも参加可</p>
+        <p class="ws-desc">藤原勝熙によるギターLIVE、toastによるアカペラLIVE。</p>
+        <p class="ws-profile">（各日1回開催）</p>
+      </div>
+    </div>
+
+    <!-- 親子の対話 -->
+    <div style="margin-top:3.5rem;" class="fade-in">
+      <h3 style="font-size:1.15rem;color:var(--navy);font-weight:500;letter-spacing:.06em;margin-bottom:.8rem;">
+        親子で紡ぐ、新しい対話
+      </h3>
+      <p class="body-text">
+        今回は、お子さんと参加可能なワークショップ、そして子どものみが参加できる表現ワークをご用意しています。<br>
+        親子での帰り道、今まで話したことのないようなご自身の内面や、
+        お子さんの感覚をじっくりと聴きあいながら帰路に着く——<br>
+        そんな<strong>親子の絆を深める場</strong>としてもご用意しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     タイムスケジュール
+================================= -->
+<section class="tt-section">
+  <div class="container">
+    <p class="section-label fade-in">Schedule</p>
+    <h2 class="section-title fade-in">展示・ワークショップ タイムスケジュール</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="body-text fade-in">
+      展示…<strong>終日入場無料</strong>　自由に鑑賞いただけます<br>
+      ワークショップ…心身解放バレエ、ナラティブ絵本®︎（ミニ）は<strong>事前予約・チケット制</strong>
+    </p>
+    <div class="tt-cols fade-in" style="margin-top:2rem;">
+      <!-- 6/20 -->
+      <div>
+        <p class="tt-day-title">6月20日（土）</p>
+        <p class="tt-info">10:00 開場　18:00 閉場</p>
+        <div class="tt-row"><span class="tt-time">11:00–11:30</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
+        <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">心身解放バレエ（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">あいさやミューズ　ダンシング アメージンググレイス</span></div>
+        <p class="tt-anytime">
+          こども表現ワーク「かいたり、みにつけたり、パチンパチン」<br>
+          モヤモヤ燃やしちゃおう<br>
+          哲学少女の問いかけクッキー<br>
+          → 終日、随時開催
+        </p>
+      </div>
+      <!-- 6/21 -->
+      <div>
+        <p class="tt-day-title">6月21日（日）</p>
+        <p class="tt-info">10:00 開場　18:00 閉場</p>
+        <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">心身解放バレエ（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">13:30–14:00</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">toast　アカペラLIVE</span></div>
+        <p class="tt-anytime">
+          こども表現ワーク「かいたり、みにつけたり、パチンパチン」<br>
+          モヤモヤ燃やしちゃおう<br>
+          哲学少女の問いかけクッキー<br>
+          → 終日、随時開催
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     プロジェクトの根源・作家たち
+================================= -->
+<section style="background:var(--foam);padding:4rem 1.5rem;">
+  <div class="container text-center">
+    <p class="section-label fade-in">Artists</p>
+    <h2 class="section-title fade-in">プロジェクトの根源と作家たち</h2>
+    <div class="section-divider center fade-in"></div>
+    <p class="body-text fade-in" style="margin:0 auto 2rem;max-width:600px;">
+      作品参加の皆さまが何に共感し、何を求めて作品作りに飛び込んだのか——<br>
+      『記憶を纏う』の根源的な考え方はコチラから。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+       target="_blank" rel="noopener" class="cta-link fade-in">
+      ▶ なぜ、これほどの強烈な記憶が、このプロジェクトで癒され得るのか。
+    </a>
+  </div>
+</section>
+
+<!-- ==============================
+     応援コメント
+================================= -->
+<section class="comments-section">
+  <div class="container">
+    <p class="section-label fade-in">Support</p>
+    <h2 class="section-title fade-in">各方面からの応援コメント</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="body-text fade-in">
+      芸術家でもない、何の才能もない——そんな私が死を見て始めた家族の『記憶』と向き合うアート。<br>
+      荒削りながらも、たくさんの方に応援していただいています。
+    </p>
+
+    <p class="fade-in" style="margin-top:1.5rem;">
+      <a href="https://drive.google.com/file/d/1jACLPiWGUMzQis9aju8a-zOOT89py6Lh/view?usp=drivesdk"
+         target="_blank" rel="noopener" class="cta-link">
+        👉 老若男女が泣いた11月個展はこちら
+      </a>
+    </p>
+
+    <div class="comment-grid" style="margin-top:2.5rem;">
+      <!-- 喜多 -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">喜多 恒介 さま</p>
+            <p class="comment-title">一般社団法人 高校生みらいラボ 代表 ／ （株）キタイエ エグゼクティブコーチ</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          開催、誠におめでとうございます。「人は本当に望む方向に人生を変えることができる」ということを、夏帆さん自身が今、証明しようとしています。
+          私たちのコーチングもアートも、その本質は一緒です。自分自身に眠っているルーツ、可能性、ポテンシャルをどれだけ引き出し、表現していくか。
+          この挑戦に触れた皆さんが、いったいどんな変化を起こしていくのか——一人のコーチとして今からそれがとても楽しみです。
+        </p>
+      </div>
+      <!-- koh Akao -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">koh Akao さま</p>
+            <p class="comment-title">ライフコーチ ／ 写真家</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          『記憶を纏う』が提供するような魂に触れる体験を言語化することは、少々野暮なのかもしれません。
+          思考の枠を超え、直感で感じ取るアートの力こそが、止まった時間を動かします。
+          心が触れたなら、まずは理屈抜きで会場に足を運んでみてください。
+          夏帆さんのアートプロジェクトは、父の作業着という「服」をトリガーに、写真と言葉で記憶を再構築し、過去の愛を再確認します。
+          この展示は、来場者一人ひとりの心の奥にある「眠り続けた幼い自分」を抱きしめる鏡になるでしょう。
+        </p>
+      </div>
+      <!-- 大中 -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">大中 啓嗣 さま</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          夏帆さんの展示を観るのは、覚悟が要る。いちばん近くていちばん遠い「家族」という存在に、真摯に向き合おうとする彼女の文章は、
+          時として残酷だが、それ以上に優しい。文章を読み、写真を見つめ、夏帆さんの生き様を観ていたつもりが、気がつけば自分の生き様を見つめはじめている。
+          夏帆さんの展示を観るのは、覚悟が要る。が、その覚悟だけが、生きてゆこうという意志へと私をつなげてゆく。
+        </p>
+      </div>
+      <!-- 坂田 -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">坂田 聖一郎 さま</p>
+            <p class="comment-title">（株）ドラゴン教育革命 代表取締役 ／ プロコーチ養成講師</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          私はアートが嫌いだ。しかし、アートが夏帆を救ってくれたはずだ。そして、アートを通して夏帆の人生に触れることができるはずだ。
+          夏帆の人生に触れたい。そう思った方はぜひ足を運んでみてほしい。いや足を運んでください。いや行ってやってください。お願いします。
+        </p>
+      </div>
+      <!-- 大野 -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">大野 佐也加 さま</p>
+            <p class="comment-title">声で人生を変える起業コーチ ／ Mrs &amp; Mr of the year 2025 徳島大会グランプリ</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          人は絶望の淵に立たされた時、何を選択するのか？どんな淵に立たされても、私たちには選択する力があります。
+          力強く、賢く、逞しく——私たちは「前を向ける」のです。そのことをこの個展で伝えています。
+        </p>
+      </div>
+      <!-- 桜井 -->
+      <div class="comment-card fade-in">
+        <div class="comment-person">
+          <div class="comment-icon">📣</div>
+          <div>
+            <p class="comment-name">桜井 亜希子 さま</p>
+            <p class="comment-title">写真家</p>
+          </div>
+        </div>
+        <p class="comment-text">
+          自分、家族、記憶、過去——世界中の誰とも違う自分にしか分からない、
+          いや自分にも分からない、だけど誰かと分かち合いたい。
+          扉（箱）を開けて表現する。壮大なテーマ、覗いてみたい。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     記憶の解説
+================================= -->
+<section class="memory-section">
+  <div class="container">
+    <p class="section-label fade-in">About Memory</p>
+    <h2 class="section-title fade-in">実は85%の人が<br>『記憶』について誤解をしています。</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="memory-items fade-in">
+      <p class="memory-item">『記憶』は変えられない</p>
+      <p class="memory-item">『記憶』はいつまでも私を支配する</p>
+      <p class="memory-item">『記憶』は私が愛されなかったことを、壊れたレコードのように繰り返し再生してくる</p>
+    </div>
+    <p class="body-text fade-in">
+      私もそうでした。記憶は変えられるわけがないと信じて、思い出さないように、心の奥底に無理やり追いやっていました。
+    </p>
+    <div class="memory-highlight fade-in">
+      初めてメガネをかけたとき、今まで見えなかった木々の葉の細やかさが目に飛び込んでくるように——<br>
+      「私は愛されてきた」これがメガネになって、かけることができたなら？<br>
+      その前提に立ったとき、わたしたちはやっと愛されてきた証拠を集め始めることができるのです。
+    </div>
+    <p class="body-text fade-in">
+      服が記憶のトリガーになり、タイムスリップする。今を生きる自分が、若かりし頃の親に会いに行く。
+      家族の歴史、父の気持ち、母の状況——やっと、思いを馳せることができる。<br><br>
+      自分という人間は父親50%、母親50%から成り立っている。どちらか一方でも否定すれば自分の半分をなくしたまま生きることになる。<br>
+      自己否定と愛されることへの渇望。しかし、<strong>私たちはもう『記憶』に立ち向かうことができる。</strong>
+    </p>
+    <p class="body-text fade-in" style="margin-top:1.5rem;">
+      『記憶を纏う』は、「服」「写真」「言葉」を通して家族の記憶を癒すアートプロジェクトであり、
+      同時に、見る人自身を映す鏡のような存在です。<br>
+      この作品を鑑賞し、参加することは"誰か"への支援ではなく、<br>
+      <strong>まだ抱きしめていない"自分"への愛のご褒美</strong>なのです。
+    </p>
+    <p style="margin-top:2rem;" class="fade-in">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+         target="_blank" rel="noopener" class="cta-link">
+        👉 今すぐ"愛のご褒美"に参加する
+      </a>
+    </p>
+    <p class="body-text fade-in" style="margin-top:2rem;">
+      撮影された写真、つむがれたエッセイにはその人の人生が刻まれます。<br>
+      『記憶を纏う』は<strong>癒しであり、祈りであり、再生の記録</strong>になり、そして、孫の代に引き継ぐ伝記になるのです。
+    </p>
+    <p class="fade-in" style="margin-top:1.2rem;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+         target="_blank" rel="noopener" class="cta-link">
+        ▶ 実は、この『記憶を癒す』試みは2024年から実験を重ね、2回の展示を経ています。
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- ==============================
+     体験談
+================================= -->
+<section class="testimonials-section">
+  <div class="container">
+    <p class="section-label fade-in">Voice</p>
+    <h2 class="section-title fade-in">来場者の声</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="testimonial-list">
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">「展示の空気の中で、幼い自分の泣き声が胸の奥に響いた。作品の前で、静かに泣きました。」</p>
+        <p class="testimonial-who">40代・フリーランス・女性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">「なんとも言えない感情がわいて、亡くした両親が心に浮かんで、涙をこらえきれなかった。ただ、これだけは分かる。私はもっと両親と話したかった。」</p>
+        <p class="testimonial-who">60代・主婦・女性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">「父の作業着の話を読んだとき、亡くなった祖父の匂いを思い出しました。見るというより、心に触れる展示です。」</p>
+        <p class="testimonial-who">50代・中学校教員・男性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">「もっと家族の歴史を知りたい。おばあちゃんに会いたい。家族のことを聞きたい。初めてこんな気持ちになりました。」</p>
+        <p class="testimonial-who">30代・看護師・女性</p>
+      </div>
+      <div class="testimonial-card fade-in">
+        <p class="testimonial-text">「あの写真を見てから、母に初めて"ありがとう"とLINEしました。まだ子供はいないけれど、私もやってみたい。」</p>
+        <p class="testimonial-who">20代・ライター・女性</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     心理的安全性
+================================= -->
+<section class="safety-section">
+  <div class="container">
+    <p class="section-label fade-in">Safety</p>
+    <h2 class="section-title fade-in">記憶に触れたり表現することは<br>怖くないのですか？</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="safety-box fade-in">
+      <p>
+        確かに、人によっては、ご自身の経験と重ね合わせて、様々な想いを感じられる可能性がございます。<br><br>
+        みなさまの心理的安全性と、ご自身の記憶に触れるという挑戦へのスペシャルフォローとして——<br>
+        <strong>会期終了から1週間、専門のカウンセラーによる相談窓口を設置いたします。</strong><br><br>
+        会場で感じたこと、言葉にならなかった思いを、安心できる場でお話しいただけます。<br>
+        詳細は会場にてご案内、または公式LINEよりお気軽にお問い合わせください。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     特別なご案内（オンライン）
+================================= -->
+<section class="online-section">
+  <div class="container">
+    <p class="section-label fade-in">Online</p>
+    <h2 class="section-title fade-in">特別なご案内</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="online-body fade-in">
+      企画にも、エッセイにも、心揺さぶられ、一目見たいと思う。<br>
+      けれども、様々な事情で来場できない——そんな方に「特別なご案内」です。<br><br>
+      <strong>作品をオンラインで鑑賞できる解説付きLIVE配信</strong>に参加いただけます。
+    </p>
+    <ul class="online-list fade-in">
+      <li>エッセイの読み上げ、作品の解説</li>
+      <li>場が整えば『記憶セッション』も</li>
+      <li>限定チャットにてアーカイブの視聴も可能</li>
+    </ul>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+       target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);">
+      こちらからどうぞ 👉 15人全ての作品が見れるオンライン鑑賞券はこちら
+    </a>
+  </div>
+</section>
+
+<!-- ==============================
+     サポーター募集
+================================= -->
+<section class="support-section">
+  <div class="container">
+    <p class="section-label fade-in">Support</p>
+    <h2 class="section-title fade-in">一緒に育てるサポーター様も<br>募集しております。</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="support-box fade-in">
+      <p>
+        サポーター様には、あなた自身の人生をアートにする<strong>『ナラティブ写真集』</strong>を体験いただけます。<br><br>
+        ワークショップ参加・オンライン鑑賞の方限定で、<strong>『記憶を纏う』コミュニティ</strong>にご招待いたします。<br>
+        このコミュニティでは、定期的な瞑想などを使ったワークや、展示参加の優先案内を行います。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     次回予定
+================================= -->
+<section class="next-section">
+  <div class="container">
+    <p class="section-label fade-in">Next</p>
+    <h2 class="section-title fade-in">今後の展示予定</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="next-grid">
+      <div class="next-card fade-in">
+        <p class="next-no">EXHIBITION NO.3</p>
+        <p class="next-title">広島</p>
+        <p class="next-info">2026年12月 予定</p>
+      </div>
+      <div class="next-card fade-in">
+        <p class="next-no">EXHIBITION NO.4</p>
+        <p class="next-title">兵庫県 明石市</p>
+        <p class="next-info">2027年6月 予定</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     資金使途
+================================= -->
+<section class="fund-section">
+  <div class="container">
+    <p class="section-label fade-in">Funding</p>
+    <h2 class="section-title fade-in">サポートいただいた資金の使い道</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="fund-bars fade-in">
+      <div class="fund-row">
+        <span class="fund-label">展示会場費・設備費・印刷制作費</span>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:40%"></div></div>
+        <span class="fund-pct">40%</span>
+      </div>
+      <div class="fund-row">
+        <span class="fund-label">運営費</span>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:30%"></div></div>
+        <span class="fund-pct">30%</span>
+      </div>
+      <div class="fund-row">
+        <span class="fund-label">広報・デザイン費</span>
+        <div class="fund-bar-wrap"><div class="fund-bar" style="width:30%"></div></div>
+        <span class="fund-pct">30%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     最後に + CTA
+================================= -->
+<section class="cta-section">
+  <div class="container">
+    <p class="section-label fade-in">Join Us</p>
+    <h2 class="section-title fade-in">記憶の中に、まだ、<br>抱きしめていないあなたはいませんか？</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="cta-note fade-in">
+      もし、あなたの中にも「まだ癒えていない記憶」があるのなら。<br>
+      あなたの支援が、あなたの物語が、「誰かの記憶を癒す灯」になります。<br><br>
+      家計の解説書でもある「記憶」を、子に、孫に継いでいきましょう。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+       target="_blank" rel="noopener" class="cta-btn fade-in">
+      今すぐ『記憶を纏う』を支援する
+    </a>
+  </div>
+</section>
+
+<!-- ==============================
+     サポートメンバー
+================================= -->
+<section class="member-section">
+  <div class="container">
+    <p class="section-label fade-in">Thanks</p>
+    <h2 class="section-title fade-in">個展に向けて背中を押してくださった<br>サポートメンバーの皆さま</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="body-text fade-in">心より感謝いたします。みなさまの「もちろん助けるよ！」の言葉に何度救われたかわかりません。</p>
+    <div class="member-grid fade-in">
+      <div class="member-item">📷 SaSaさま／思い出写真家<a href="https://www.instagram.com/sasaphoto0801" target="_blank" rel="noopener">@sasaphoto0801</a></div>
+      <div class="member-item">📣 清水翔平さま／淡路島のカメラマン<a href="https://www.instagram.com/shohei.shimizu.216" target="_blank" rel="noopener">@shohei.shimizu.216</a></div>
+      <div class="member-item">📣 中村一昭さま／広島の老舗写真家<a href="https://www.instagram.com/amuse_photo_studio" target="_blank" rel="noopener">@amuse_photo_studio</a></div>
+      <div class="member-item">📣 マイケル様／英語発信・理念サポート<a href="https://www.instagram.com/eigo.michael" target="_blank" rel="noopener">@eigo.michael</a></div>
+      <div class="member-item">📣 ちる様／フライヤーデザイン<a href="https://www.instagram.com/chill.m.c" target="_blank" rel="noopener">@chill.m.c</a></div>
+      <div class="member-item">📣 みきこ様／SNS告知サムネイル<a href="https://www.instagram.com/mikiko_pro" target="_blank" rel="noopener">@mikiko_pro</a></div>
+      <div class="member-item">📣 おかりな様／プロモーション動画制作<a href="https://www.instagram.com/okarina_lifecoach" target="_blank" rel="noopener">@okarina_lifecoach</a></div>
+      <div class="member-item">📣 トラ様／プロジェクトマネジメント<a href="https://www.instagram.com/mama_gohan_tora" target="_blank" rel="noopener">@mama_gohan_tora</a></div>
+      <div class="member-item">📣 のんじゃー様／海外向け告知制作</div>
+      <div class="member-item">📣 三角悠花さま／プレスリリース<a href="https://www.instagram.com/flower_career" target="_blank" rel="noopener">@flower_career</a></div>
+      <div class="member-item">📣 ともな様／案内文校正<a href="https://www.instagram.com/tomona_mind" target="_blank" rel="noopener">@tomona_mind</a></div>
+      <div class="member-item">📣 さやちゃん様／全体案内文校正<a href="https://www.instagram.com/sayaka_8_16" target="_blank" rel="noopener">@sayaka_8_16</a></div>
+      <div class="member-item">📣 道上里奈さま／Peatix管理<a href="https://www.instagram.com/rina.rainbowrainbow" target="_blank" rel="noopener">@rina.rainbowrainbow</a></div>
+      <div class="member-item">📣 知念諒さま／メンタルサポート<a href="https://www.instagram.com/ryo.chinen.79" target="_blank" rel="noopener">@ryo.chinen.79</a></div>
+      <div class="member-item">📣 熊谷加菜さま／プロモーション素材</div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     プロフィール
+================================= -->
+<section class="profile-section">
+  <div class="container">
+    <p class="section-label fade-in">Profile</p>
+    <h2 class="section-title fade-in">主催者プロフィール</h2>
+    <div class="section-divider fade-in"></div>
+    <div class="profile-box fade-in">
+      <div class="profile-photo">
+        <div>
+          <div style="font-size:2.5rem;margin-bottom:.5rem;">🌊</div>
+          ウロコドロップ<br>
+          <span style="font-size:.78rem;opacity:.8;">夏帆</span>
+        </div>
+      </div>
+      <div>
+        <p class="profile-org">ウロコドロップ</p>
+        <p class="profile-name">夏帆</p>
+        <p class="profile-text">
+          広島市安佐南区でアート企画を行う今回のメインモデル。広島女学院中高卒。広島大学にて、学びのデザインを研究。就職後、結婚、出産。しかし、娘を産んで1年6ヶ月後、自身の体調に異変が起こり、指定難病と診断を受ける。<br><br>
+          「大切なことは生きているうちに」と決意。アートと心理学を横断し、家族や記憶のテーマを追求し始める。31年の人生で受け取った愛を、次世代に繋ぐべく記憶に向き合う。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==============================
+     夏帆メッセージ
+================================= -->
+<section class="message-section">
+  <div class="container">
+    <p class="section-label fade-in">Message</p>
+    <h2 class="section-title fade-in">夏帆より</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="message-body fade-in">
+      「記憶」は、私たちの物語です。しかし、ときに私たちを縛りつけ、未来への一歩をためらわせてしまうことがあります。<br><br>
+      私は、父の作業着に触れるまで、その怒りと悲しみのループから抜け出せないと思っていました。しかし、１枚の服が、止まっていた時間を動かしてくれました。<br><br>
+      この「記憶を纏う」プロジェクトは、あなたの人生の物語を、過去の痛みから、未来の希望へと書き換えるための一歩です。<br><br>
+      過去のあなた自身を抱きしめ、次の世代へ愛の物語を繋いでいく。あなたの支援が、その「記憶の灯」を絶やさない力となります。<br><br>
+      <strong>心が動いたのなら、物語の続きを、私たちと一緒に創り上げてください。</strong><br>
+      あなたの物語を、今、再生させましょう。
+    </p>
+  </div>
+</section>
+
+<!-- ==============================
+     FAQ / 質問
+================================= -->
+<section class="faq-section">
+  <div class="container">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-title fade-in">質問はすべてコチラで<br>対応いたします</h2>
+    <div class="section-divider fade-in"></div>
+    <p class="cta-note fade-in" style="color:rgba(220,238,249,.8);">
+      ご不明な点・ご相談は、専用チャットまたは公式LINEよりお気軽にどうぞ。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+       target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);font-size:1rem;">
+      ▶ 『記憶を纏う』専用チャット・お問い合わせ
+    </a>
+    &nbsp;&nbsp;
+    <a href="https://line.me/ti/g2/K_tgh43xAGzbGIPRBOVuxmoOSjquEv3D3C-6Ww?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+       target="_blank" rel="noopener" class="cta-link fade-in" style="color:#06c755;font-size:1rem;">
+      ▶ 公式LINEはこちら
+    </a>
+  </div>
+</section>
+
+<!-- ==============================
+     FOOTER
+================================= -->
+<footer>
+  <p class="f-org">ウロコドロップ</p>
+  <p>イベント No.2 &nbsp;「記憶を纏う」&nbsp; 2026.6.20–21 &nbsp;神奈川県大和市 BIG BLUE</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
