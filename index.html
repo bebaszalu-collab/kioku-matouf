@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -56,6 +56,13 @@
       overflow: hidden;
       padding: 4rem 1.5rem 6rem;
       background: linear-gradient(160deg, var(--navy) 0%, var(--ocean) 60%, #2a6496 100%);
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: .22;
+      mix-blend-mode: luminosity;
     }
     .hero::after {
       content: '';
@@ -154,6 +161,21 @@
 
     /* ─── ストーリー ─── */
     .story-section { background: var(--white); }
+    .story-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    @media (max-width:560px) { .story-photos { grid-template-columns: 1fr; } }
+    .story-photos img {
+      width: 100%; height: 280px;
+      object-fit: cover; border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(13,34,64,.12);
+    }
+    .story-photos img.tall {
+      height: 360px;
+    }
     .story-lead {
       font-size: clamp(1rem,2.5vw,1.15rem);
       color: var(--sub); line-height: 2.1; margin-bottom: 1.5rem;
@@ -165,6 +187,19 @@
       border-left: 3px solid var(--sky);
       padding-left: 1.2rem; margin: 1.5rem 0;
       line-height: 1.6;
+    }
+
+    /* ─── 展示写真 ─── */
+    .exhibition-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 2rem;
+    }
+    @media (max-width:560px) { .exhibition-photos { grid-template-columns: 1fr; } }
+    .exhibition-photos img {
+      width: 100%; height: 240px;
+      object-fit: cover; border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.2);
     }
 
     /* ─── 見出しバナー ─── */
@@ -266,10 +301,12 @@
       gap: .8rem; margin-bottom: 1rem;
     }
     .comment-icon {
-      width: 44px; height: 44px; border-radius: 50%;
+      width: 56px; height: 56px; border-radius: 50%;
+      overflow: hidden; flex-shrink: 0;
       background: linear-gradient(135deg, var(--ocean), var(--sky));
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: .8rem; flex-shrink: 0;
+    }
+    .comment-icon img {
+      width: 100%; height: 100%; object-fit: cover;
     }
     .comment-name { font-size: .9rem; font-weight: 600; color: var(--navy); }
     .comment-title { font-size: .76rem; color: var(--sub); margin-top: .2rem; }
@@ -495,6 +532,7 @@
      HERO
 ================================= -->
 <header class="hero">
+  <img src="images/hero-main.jpg" alt="記憶を纏う メインビジュアル" class="hero-img">
   <div class="hero-light"></div>
   <p class="hero-badge">Event No.2 &nbsp;｜&nbsp; 2026.6.20–21</p>
   <h1 class="hero-title">記憶を纏う</h1>
@@ -504,7 +542,7 @@
   <p class="hero-venue">神奈川県 大和市 鶴間 1-9-17 &nbsp;BIG BLUE</p>
   <p class="hero-venue">小田急江ノ島線 鶴間駅下車 徒歩3分</p>
   <span class="hero-free">入場無料</span>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
      target="_blank" rel="noopener" class="hero-cta">申し込む</a>
 </header>
 
@@ -519,12 +557,22 @@
     <p class="section-label fade-in">Story</p>
     <h2 class="section-title fade-in">父の作業着から始まる、<br>家族の再生の物語。</h2>
     <div class="section-divider fade-in"></div>
+    <p class="body-text fade-in" style="margin-bottom:1.5rem;">
+      本展は、主催なつほが、20代の頃の父の作業着を実際に身にまとい、記憶と向き合いながら撮影した写真作品を中心に、参加者それぞれが親の服を着ること、過去の場所をめぐること、言葉として想いを書き残すことを通して、「親との関係」や「自分自身」を見つめ直した【記録】を展示する写真やエッセイの展示です。
+    </p>
+    <p class="body-text fade-in" style="font-size:.88rem;letter-spacing:.15em;margin-bottom:.5rem;">今から語られるのは、父の作業着から始まる、家族の再生の物語。</p>
+    <p style="text-align:center;color:var(--mist);letter-spacing:.4em;margin-bottom:1.8rem;" class="fade-in">―――――――――</p>
     <p class="story-quote fade-in">「お前、お前！！」<br>体がすくんで、その後、衝撃が走る。</p>
     <p class="body-text fade-in">
       憎いという気持ちと、徹底的に嫌ってやるという決意。<br>
       思い返せば思い返すほど、胃がよじれるような感覚と、<br>
       悲しさを抱えた怒りが、込み上げてくる。
     </p>
+    <div class="story-photos fade-in">
+      <img src="images/story-window.jpg" alt="記憶と向き合う" class="tall">
+      <img src="images/story-house.jpg" alt="家族の記憶をたどる">
+    </div>
+
     <p class="body-text fade-in" style="margin-top:1.5rem;">
       あなたを何度も足止めする「記憶」——<br>
       それが、<strong>たった一枚の服で癒せるとしたら。</strong><br>
@@ -541,6 +589,11 @@
     <p class="section-label fade-in">From Hiroshima to Kanagawa</p>
     <h2 class="section-title fade-in">広島で100人が涙した記憶、ふたたび。</h2>
     <div class="section-divider fade-in"></div>
+    <div class="exhibition-photos fade-in">
+      <img src="images/exhibition-1.jpg" alt="広島展示の様子①">
+      <img src="images/exhibition-2.jpg" alt="広島展示の様子②">
+    </div>
+
     <p class="banner-body fade-in">
       地方都市・広島で100人を超える人々が涙した記憶の展示。<br>
       6月20日（土）21日（日）神奈川県大和市で<strong>超体験型にグレードアップ</strong>して再び！<br><br>
@@ -574,10 +627,10 @@
     <div class="ws-grid">
       <div class="ws-card fade-in">
         <div class="ws-icon">🩰</div>
-        <p class="ws-name">心身解放バレエ「ワタシと演じる」</p>
-        <p class="ws-age">10歳程度より参加可能</p>
-        <p class="ws-desc">身体を通じて記憶と向き合い、表現する体験型ワークショップ。</p>
-        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+        <p class="ws-name">からだで感じる、こころの気づきワーク</p>
+        <p class="ws-age">10歳程度より参加可。定員8名</p>
+        <p class="ws-desc">バレエの先生による、身体で遊んで感じて、こころの気づきを楽しむ体験型ワークショップ。</p>
+        <p class="ws-profile">主催：<strong>内田愛美</strong>（バレエ教師）<br>「身体で遊んで表現する。『身体ってこんなに正直だったんだ！』発見と一緒に楽しみましょう。ダンス未経験の方歓迎。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">📖</div>
@@ -591,41 +644,54 @@
         <p class="ws-name">こども表現ワーク<br>「かいたり、みにつけたり、パチンパチン」</p>
         <p class="ws-age">子どものみ参加可能</p>
         <p class="ws-desc">子どもが描いて、着て、感じる、のびのびとした表現の場。</p>
-        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+        <p class="ws-profile">主催：<strong>ささきゆう</strong>（保育士・海を愛するダイバー）<br>「作品なんて気負わず、楽しんでみよう！」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">🔥</div>
         <p class="ws-name">モヤモヤ燃やしちゃおう</p>
-        <p class="ws-age">誰でも参加可</p>
+        <p class="ws-age">誰でも参加可（随時開催）</p>
         <p class="ws-desc">心のモヤモヤを言葉にして、一緒に解放するワーク。</p>
-        <p class="ws-profile">（随時開催）</p>
+        <p class="ws-profile">主催：<strong>広島の夏帆</strong>（教育とアート・心に潜る瞬間が大好き）<br>「さあ、モヤモヤに形を与えて、本当に燃やしちゃおう」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">🍪</div>
-        <p class="ws-name">哲学少女の問いかけクッキー屋さん</p>
-        <p class="ws-age">誰でも参加可</p>
-        <p class="ws-desc">問いかけとクッキーで、深い対話が始まる不思議な体験。</p>
-        <p class="ws-profile">（随時開催）</p>
+        <p class="ws-name">問いかけクッキー屋さん</p>
+        <p class="ws-age">誰でも参加可（随時開催）</p>
+        <p class="ws-desc">実際に食べていただけます。友人・親子でいつもの私じゃない会話が始まっちゃう体験。</p>
+        <p class="ws-profile">主催：<strong>波木はなこ</strong>（現役大学生・超面白くて可愛くてかっこいいクッキーをつくっている）</p>
       </div>
       <div class="ws-card fade-in">
-        <div class="ws-icon">🎵</div>
-        <p class="ws-name">アカペラ LIVE &amp; ギター LIVE</p>
+        <div class="ws-icon">💃</div>
+        <p class="ws-name">アイコミューズとバレエのセッション</p>
         <p class="ws-age">誰でも参加可</p>
-        <p class="ws-desc">藤原勝熙によるギターLIVE、toastによるアカペラLIVE。</p>
-        <p class="ws-profile">（各日1回開催）</p>
+        <p class="ws-desc">アメージンググレイスとバレエ。1日の締めくくりに相応しい癒しの時間。</p>
+        <p class="ws-profile">主催：<strong>Ai Ogushi</strong><br>「一緒に口ずさんだり、踊ったりしよう。」</p>
+      </div>
+      <div class="ws-card fade-in">
+        <div class="ws-icon">🎸</div>
+        <p class="ws-name">ギター LIVE</p>
+        <p class="ws-age">誰でも参加可（各日1回開催）</p>
+        <p class="ws-desc">心に響くギターの音色でひとときの癒しを。</p>
+        <p class="ws-profile">主催：<strong>藤原勝熙</strong></p>
       </div>
     </div>
 
     <!-- 親子の対話 -->
     <div style="margin-top:3.5rem;" class="fade-in">
       <h3 style="font-size:1.15rem;color:var(--navy);font-weight:500;letter-spacing:.06em;margin-bottom:.8rem;">
-        親子で紡ぐ、新しい対話
+        親子でつむぐ、新しい対話
       </h3>
       <p class="body-text">
         今回は、お子さんと参加可能なワークショップ、そして子どものみが参加できる表現ワークをご用意しています。<br>
         親子での帰り道、今まで話したことのないようなご自身の内面や、
-        お子さんの感覚をじっくりと聴きあいながら帰路に着く——<br>
+        お子さんの感覚をじっくりと聴きあいながら帰り路に着く——<br>
         そんな<strong>親子の絆を深める場</strong>としてもご用意しています。
+      </p>
+      <p style="margin-top:2rem;" class="fade-in">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
+           target="_blank" rel="noopener" class="cta-btn" style="font-size:.9rem;padding:.8em 2.2em;">
+          チケットをすぐに申し込む
+        </a>
       </p>
     </div>
   </div>
@@ -641,7 +707,7 @@
     <div class="section-divider fade-in"></div>
     <p class="body-text fade-in">
       展示…<strong>終日入場無料</strong>　自由に鑑賞いただけます<br>
-      ワークショップ…心身解放バレエ、ナラティブ絵本®︎（ミニ）は<strong>事前予約・チケット制</strong>
+      ワークショップ…からだで感じるこころの気づきワーク、ナラティブ絵本®︎（ミニ）は<strong>事前予約・チケット制</strong>（大人1人 2,500円 ／ 大人1人と子ども2人まで 3,000円）
     </p>
     <div class="tt-cols fade-in" style="margin-top:2rem;">
       <!-- 6/20 -->
@@ -649,9 +715,9 @@
         <p class="tt-day-title">6月20日（土）</p>
         <p class="tt-info">10:00 開場　18:00 閉場</p>
         <div class="tt-row"><span class="tt-time">11:00–11:30</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
-        <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">心身解放バレエ（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">体で遊んで感じるバレエワーク（10歳以上、1人でも親子でも）</span></div>
         <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
-        <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">あいさやミューズ　ダンシング アメージンググレイス</span></div>
+        <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">アイコミューズ　ダンシング アメージンググレイス</span></div>
         <p class="tt-anytime">
           こども表現ワーク「かいたり、みにつけたり、パチンパチン」<br>
           モヤモヤ燃やしちゃおう<br>
@@ -663,7 +729,7 @@
       <div>
         <p class="tt-day-title">6月21日（日）</p>
         <p class="tt-info">10:00 開場　18:00 閉場</p>
-        <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">心身解放バレエ（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">体で遊んで感じるバレエワーク（10歳以上、1人でも親子でも）</span></div>
         <div class="tt-row"><span class="tt-time">13:30–14:00</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
         <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
         <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">toast　アカペラLIVE</span></div>
@@ -690,7 +756,7 @@
       作品参加の皆さまが何に共感し、何を求めて作品作りに飛び込んだのか——<br>
       『記憶を纏う』の根源的な考え方はコチラから。
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+    <a href="https://docs.google.com/document/d/1VfT80sHJkpp6zhNa1oap2Y8gP0zb-dceiQwdGuaqp1U/edit?usp=sharing"
        target="_blank" rel="noopener" class="cta-link fade-in">
       ▶ なぜ、これほどの強烈な記憶が、このプロジェクトで癒され得るのか。
     </a>
@@ -711,9 +777,9 @@
     </p>
 
     <p class="fade-in" style="margin-top:1.5rem;">
-      <a href="https://drive.google.com/file/d/1jACLPiWGUMzQis9aju8a-zOOT89py6Lh/view?usp=drivesdk"
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
          target="_blank" rel="noopener" class="cta-link">
-        👉 老若男女が泣いた11月個展はこちら
+        チケットをすぐに申し込む
       </a>
     </p>
 
@@ -721,7 +787,7 @@
       <!-- 喜多 -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-sakata.jpg" alt="喜多恒介さん"></div>
           <div>
             <p class="comment-name">喜多 恒介 さま</p>
             <p class="comment-title">一般社団法人 高校生みらいラボ 代表 ／ （株）キタイエ エグゼクティブコーチ</p>
@@ -730,81 +796,82 @@
         <p class="comment-text">
           開催、誠におめでとうございます。「人は本当に望む方向に人生を変えることができる」ということを、夏帆さん自身が今、証明しようとしています。
           私たちのコーチングもアートも、その本質は一緒です。自分自身に眠っているルーツ、可能性、ポテンシャルをどれだけ引き出し、表現していくか。
-          この挑戦に触れた皆さんが、いったいどんな変化を起こしていくのか——一人のコーチとして今からそれがとても楽しみです。
+          この夏帆さんの挑戦に触れた皆さんが、いったいどんな変化を起こしていくのか。一人のコーチとして今からそれがとても楽しみです。
         </p>
       </div>
       <!-- koh Akao -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-akao.jpg" alt="koh Akaoさん"></div>
           <div>
             <p class="comment-name">koh Akao さま</p>
             <p class="comment-title">ライフコーチ ／ 写真家</p>
           </div>
         </div>
         <p class="comment-text">
-          『記憶を纏う』が提供するような魂に触れる体験を言語化することは、少々野暮なのかもしれません。
-          思考の枠を超え、直感で感じ取るアートの力こそが、止まった時間を動かします。
-          心が触れたなら、まずは理屈抜きで会場に足を運んでみてください。
-          夏帆さんのアートプロジェクトは、父の作業着という「服」をトリガーに、写真と言葉で記憶を再構築し、過去の愛を再確認します。
-          この展示は、来場者一人ひとりの心の奥にある「眠り続けた幼い自分」を抱きしめる鏡になるでしょう。
+          『記憶を纏う』が提供するような、魂に触れる体験を言語化することは、少々野暮なのかもしれません。思考の枠を超え、直感で感じ取るアートの力こそが、止まった時間を動かします。なので、心が触れたなら、まずは理屈抜きで会場に足を運んでみてください。<br><br>
+          その上で、今回「期待の声」のオファーをいただき、プロコーチであり表現を追求するものとして、このプロジェクトから感じたことを、心を込めて言葉にさせていただきます。<br><br>
+          私はプロコーチとして、家族との確執や怒りといった記憶に足を止められ、本来歩みたい人生を歩めずにいる方を多く見てきました。この痛みは、言葉や理論だけでは癒せません。必要なのは、「私は愛されていた」という揺るぎない痕跡に触れる体験であり、その証拠を集め直す、内省の旅です。<br><br>
+          夏帆さんのアートプロジェクトは、父の作業着という「服」をトリガーに、写真と言葉で記憶を再構築し、過去の愛を再確認します。作品作りを通して、記憶の深部にある愛の痕跡を掘り起こす。これは、過去の自分を許し、未来を創造し直すための真摯で勇気あるプロセスです。<br><br>
+          この展示は、来場者一人ひとりの心の奥にある「眠り続けた幼い自分」を抱きしめる鏡になるでしょう。あなたの記憶が癒され、人生の傷さえもが、実は愛の証だったと気づく瞬間が、この広島で生まれることを心から期待し、応援させていただきます。
         </p>
       </div>
       <!-- 大中 -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-onaka.jpg" alt="大中啓嗣さん"></div>
           <div>
             <p class="comment-name">大中 啓嗣 さま</p>
           </div>
         </div>
         <p class="comment-text">
-          夏帆さんの展示を観るのは、覚悟が要る。いちばん近くていちばん遠い「家族」という存在に、真摯に向き合おうとする彼女の文章は、
-          時として残酷だが、それ以上に優しい。文章を読み、写真を見つめ、夏帆さんの生き様を観ていたつもりが、気がつけば自分の生き様を見つめはじめている。
-          夏帆さんの展示を観るのは、覚悟が要る。が、その覚悟だけが、生きてゆこうという意志へと私をつなげてゆく。
+          夏帆さんの展示を観るのは、覚悟が要る。いちばん近くていちばん遠い「家族」という存在に、真摯に向き合おうとする彼女の文章は、時として残酷だが、それ以上に優しい。<br><br>
+          後ろを振り返る為にも、前を向く為にも、覚悟が要ることが、夏帆さんの文章からは伝わってくる。「家族」に限らず、これほどまでに真摯に他者と、そして、なによりも自分自身と、向き合ったことが私にあっただろうか。<br><br>
+          文章を読み、写真を見つめ、夏帆さんの生き様を観ていたつもりが、気がつけば自分の生き様を見つめはじめている。夏帆さんの展示を観るのは、覚悟が要る。が、その覚悟だけが、生きてゆこうという意志へと私をつなげてゆく。
         </p>
       </div>
       <!-- 坂田 -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-kita.jpg" alt="坂田聖一郎さん"></div>
           <div>
             <p class="comment-name">坂田 聖一郎 さま</p>
             <p class="comment-title">（株）ドラゴン教育革命 代表取締役 ／ プロコーチ養成講師</p>
           </div>
         </div>
         <p class="comment-text">
-          私はアートが嫌いだ。しかし、アートが夏帆を救ってくれたはずだ。そして、アートを通して夏帆の人生に触れることができるはずだ。
-          夏帆の人生に触れたい。そう思った方はぜひ足を運んでみてほしい。いや足を運んでください。いや行ってやってください。お願いします。
+          私はアートが嫌いだ。昔から図工や美術が苦手だった。手先は不器用。人よりも時間がかかるが、その割に出来栄えは今ひとつ。いつしかアートは「私とは縁遠いもの」として決めつけていた。<br><br>
+          夏帆がこれまでどんな人生を歩んできたかは詳しくは分からない。でもきっと、アートが夏帆を救ってくれたはずだ。そして、アートを通して夏帆の人生に触れることができるはずだ。<br><br>
+          私はプロコーチ。対話を通してクライアントの人生に触れられる最高の仕事だ。夏帆はアーティスト。作品を通して彼女のあり方生き方に触れられる。夏帆の人生に触れたい。そう思った方はぜひ広島に足を運んでみてほしい。いや足を運んでください。いや行ってやってください。お願いします。
         </p>
       </div>
       <!-- 大野 -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-onosakata.jpg" alt="大野佐也加さん"></div>
           <div>
             <p class="comment-name">大野 佐也加 さま</p>
             <p class="comment-title">声で人生を変える起業コーチ ／ Mrs &amp; Mr of the year 2025 徳島大会グランプリ</p>
           </div>
         </div>
         <p class="comment-text">
-          人は絶望の淵に立たされた時、何を選択するのか？どんな淵に立たされても、私たちには選択する力があります。
-          力強く、賢く、逞しく——私たちは「前を向ける」のです。そのことをこの個展で伝えています。
+          人は絶望の淵に立たされた時、何を選択するのか？どんな淵に立たされても、私たちには選択する力があります。<br><br>
+          力強く、賢く、逞しく、私たちは「前を向ける」のです。そのことをこの個展で伝えています。<br><br>
+          そして、誰よりも苦しんできた人たちが、誰よりも前を向いてきたこの「広島」という街で開催することに、私は大きな意義があると感じています。
         </p>
       </div>
-      <!-- 桜井 -->
+      <!-- 宇崎 -->
       <div class="comment-card fade-in">
         <div class="comment-person">
-          <div class="comment-icon">📣</div>
+          <div class="comment-icon"><img src="images/comment-uzaki.jpg" alt="宇崎優子さん"></div>
           <div>
-            <p class="comment-name">桜井 亜希子 さま</p>
-            <p class="comment-title">写真家</p>
+            <p class="comment-name">宇崎 優子 さま</p>
           </div>
         </div>
         <p class="comment-text">
-          自分、家族、記憶、過去——世界中の誰とも違う自分にしか分からない、
-          いや自分にも分からない、だけど誰かと分かち合いたい。
-          扉（箱）を開けて表現する。壮大なテーマ、覗いてみたい。
+          それまでほぼ接点のなかったなつほと、ひょんなことからZoomで話すことになった。「個展やりたいんだよね」そう言葉を紡ぐ彼女のエネルギーが本当に素敵で。初めましての画面越しに、私は精一杯のエールを送った。<br><br>
+          なつほの経験、感情、記憶がそのまま感じられる空間になると確信しています。なつほを通して、お越しくださったみなさまの記憶も癒されていくはずです。ぜひ、記憶を纏うなつほと仲間たちの愛に触れに来てください。<br><br>
+          微力ながら、パンフレットのデザインを担当させていただき、なつほの世界観を一緒に表現できたことを嬉しく感じています。なつほ、開催おめでとう！私も広島へ行きます！
         </p>
       </div>
     </div>
@@ -845,9 +912,9 @@
       <strong>まだ抱きしめていない"自分"への愛のご褒美</strong>なのです。
     </p>
     <p style="margin-top:2rem;" class="fade-in">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
          target="_blank" rel="noopener" class="cta-link">
-        👉 今すぐ"愛のご褒美"に参加する
+        チケットをすぐに申し込む
       </a>
     </p>
     <p class="body-text fade-in" style="margin-top:2rem;">
@@ -855,7 +922,7 @@
       『記憶を纏う』は<strong>癒しであり、祈りであり、再生の記録</strong>になり、そして、孫の代に引き継ぐ伝記になるのです。
     </p>
     <p class="fade-in" style="margin-top:1.2rem;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
          target="_blank" rel="noopener" class="cta-link">
         ▶ 実は、この『記憶を癒す』試みは2024年から実験を重ね、2回の展示を経ています。
       </a>
@@ -913,6 +980,12 @@
         詳細は会場にてご案内、または公式LINEよりお気軽にお問い合わせください。
       </p>
     </div>
+    <p style="margin-top:2rem;" class="fade-in">
+      <a href="https://docs.google.com/document/d/1XFonzHDln5Q6x6FAKZbLuJaxljC8aYMnUZpUqGKqdKI/edit?usp=sharing"
+         target="_blank" rel="noopener" class="cta-link">
+        ▶ ここに載せきれない各方面からの応援メッセージ・感想の言葉はこちら
+      </a>
+    </p>
   </div>
 </section>
 
@@ -934,7 +1007,7 @@
       <li>場が整えば『記憶セッション』も</li>
       <li>限定チャットにてアーカイブの視聴も可能</li>
     </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+    <a href="https://docs.google.com/document/d/1XFonzHDln5Q6x6FAKZbLuJaxljC8aYMnUZpUqGKqdKI/edit?usp=sharing"
        target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);">
       こちらからどうぞ 👉 15人全ての作品が見れるオンライン鑑賞券はこちら
     </a>
@@ -1023,7 +1096,7 @@
       あなたの支援が、あなたの物語が、「誰かの記憶を癒す灯」になります。<br><br>
       家計の解説書でもある「記憶」を、子に、孫に継いでいきましょう。
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
        target="_blank" rel="noopener" class="cta-btn fade-in">
       今すぐ『記憶を纏う』を支援する
     </a>
@@ -1068,13 +1141,6 @@
     <h2 class="section-title fade-in">主催者プロフィール</h2>
     <div class="section-divider fade-in"></div>
     <div class="profile-box fade-in">
-      <div class="profile-photo">
-        <div>
-          <div style="font-size:2.5rem;margin-bottom:.5rem;">🌊</div>
-          ウロコドロップ<br>
-          <span style="font-size:.78rem;opacity:.8;">夏帆</span>
-        </div>
-      </div>
       <div>
         <p class="profile-org">ウロコドロップ</p>
         <p class="profile-name">夏帆</p>
@@ -1117,7 +1183,7 @@
     <p class="cta-note fade-in" style="color:rgba(220,238,249,.8);">
       ご不明な点・ご相談は、専用チャットまたは公式LINEよりお気軽にどうぞ。
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
        target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);font-size:1rem;">
       ▶ 『記憶を纏う』専用チャット・お問い合わせ
     </a>
@@ -1153,3 +1219,6 @@
 </script>
 </body>
 </html>
+
+
+
