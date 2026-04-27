@@ -466,6 +466,9 @@
       border-radius: 4px; line-height: 1.7;
     }
     .member-item a { font-size: .78rem; display: block; margin-top: .2rem; }
+    .member-item.has-photo { padding: .6rem 1rem .8rem; }
+    .member-photo { width: 64px; height: 64px; border-radius: 50%; overflow: hidden; margin: 0 auto .6rem; }
+    .member-photo img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ─── プロフィール ─── */
     .profile-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
@@ -1113,9 +1116,18 @@
     <div class="section-divider fade-in"></div>
     <p class="body-text fade-in">心より感謝いたします。みなさまの「もちろん助けるよ！」の言葉に何度救われたかわかりません。</p>
     <div class="member-grid fade-in">
-      <div class="member-item">📷 SaSaさま／思い出写真家<a href="https://www.instagram.com/sasaphoto0801" target="_blank" rel="noopener">@sasaphoto0801</a></div>
-      <div class="member-item">📣 清水翔平さま／淡路島のカメラマン<a href="https://www.instagram.com/shohei.shimizu.216" target="_blank" rel="noopener">@shohei.shimizu.216</a></div>
-      <div class="member-item">📣 中村一昭さま／広島の老舗写真家<a href="https://www.instagram.com/amuse_photo_studio" target="_blank" rel="noopener">@amuse_photo_studio</a></div>
+      <div class="member-item has-photo" style="text-align:center;">
+        <div class="member-photo"><img src="images/member-sasa.jpg" alt="SaSaさま"></div>
+        📷 SaSaさま／思い出写真家<a href="https://www.instagram.com/sasaphoto0801" target="_blank" rel="noopener">@sasaphoto0801</a>
+      </div>
+      <div class="member-item has-photo" style="text-align:center;">
+        <div class="member-photo"><img src="images/member-shimizu.jpg" alt="清水翔平さま"></div>
+        📣 清水翔平さま／淡路島のカメラマン<a href="https://www.instagram.com/shohei.shimizu.216" target="_blank" rel="noopener">@shohei.shimizu.216</a>
+      </div>
+      <div class="member-item has-photo" style="text-align:center;">
+        <div class="member-photo"><img src="images/member-nakamura.jpg" alt="中村一昭さま"></div>
+        📣 中村一昭さま／広島の老舗写真家<a href="https://www.instagram.com/amuse_photo_studio" target="_blank" rel="noopener">@amuse_photo_studio</a>
+      </div>
       <div class="member-item">📣 マイケル様／英語発信・理念サポート<a href="https://www.instagram.com/eigo.michael" target="_blank" rel="noopener">@eigo.michael</a></div>
       <div class="member-item">📣 ちる様／フライヤーデザイン<a href="https://www.instagram.com/chill.m.c" target="_blank" rel="noopener">@chill.m.c</a></div>
       <div class="member-item">📣 みきこ様／SNS告知サムネイル<a href="https://www.instagram.com/mikiko_pro" target="_blank" rel="noopener">@mikiko_pro</a></div>
