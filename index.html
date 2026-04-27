@@ -191,10 +191,12 @@
 
     /* ─── 展示写真 ─── */
     .exhibition-photos {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem; margin-top: 2rem;
-      max-width: 600px; margin-left: auto; margin-right: auto;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .exhibition-photos img {
+      width: 100%; max-width: 600px;
     }
     @media (max-width:560px) { .exhibition-photos { grid-template-columns: 1fr; } }
     .exhibition-photos img {
