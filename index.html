@@ -282,9 +282,10 @@
     /* ─── 応援コメント ─── */
     .comments-section { background: linear-gradient(180deg, var(--white) 0%, var(--foam) 100%); }
     .comment-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem; margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem; margin-top: 2.5rem;
+      max-width: 720px; margin-left: auto; margin-right: auto;
     }
     .comment-card {
       background: var(--white);
@@ -476,10 +477,10 @@
     /* ─── プロフィール ─── */
     .profile-section { background: linear-gradient(180deg, var(--foam) 0%, var(--white) 100%); }
     .profile-box {
-      display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem;
-      align-items: start; margin-top: 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; margin-top: 2rem; max-width: 640px;
+      margin-left: auto; margin-right: auto;
     }
-    @media (max-width: 600px) { .profile-box { grid-template-columns: 1fr; } }
     .profile-photo {
       background: linear-gradient(135deg, var(--ocean), var(--sky));
       border-radius: 6px; min-height: 200px;
@@ -564,7 +565,7 @@
     <h2 class="section-title fade-in">父の作業着から始まる、<br>家族の再生の物語。</h2>
     <div class="section-divider fade-in"></div>
     <p class="body-text fade-in" style="margin-bottom:1.5rem;">
-      本展は、主催なつほが、20代の頃の父の作業着を実際に身にまとい、記憶と向き合いながら撮影した写真作品を中心に、参加者それぞれが親の服を着ること、過去の場所をめぐること、言葉として想いを書き残すことを通して、「親との関係」や「自分自身」を見つめ直した【記録】を展示する写真やエッセイの展示です。
+      本展は、なつほが、20代の頃の父の作業着を実際に身にまとい、記憶と向き合いながら撮影した写真作品から始まりました。「私も書いてみたい」そんな言葉が集まり、合同企画展という形で全国で開催するに至りました。参加者それぞれが親の服を着ること、過去の場所をめぐること、言葉として想いを書き残すことを通して、「親との関係」や「自分自身」を見つめ直した【記録】を展示する写真やエッセイの展示です。
     </p>
     <p class="body-text fade-in" style="font-size:.88rem;letter-spacing:.15em;margin-bottom:.5rem;">今から語られるのは、父の作業着から始まる、家族の再生の物語。</p>
     <p style="text-align:center;color:var(--mist);letter-spacing:.4em;margin-bottom:1.8rem;" class="fade-in">―――――――――</p>
@@ -632,38 +633,38 @@
     <div class="ws-grid">
       <div class="ws-card fade-in">
         <div class="ws-icon">🩰</div>
-        <p class="ws-name">からだで感じる、こころの気づきワーク</p>
+        <p class="ws-name">からだで感じる心の気づきワーク</p>
         <p class="ws-age">10歳程度より参加可。定員8名</p>
-        <p class="ws-desc">バレエの先生による、身体で遊んで感じて、こころの気づきを楽しむ体験型ワークショップ。</p>
+        <p class="ws-desc">バレエの先生による、「からだで感じる心の気づきワーク」。からだで遊んで感じて、こころの気づきを楽しむ体験型ワークショップ。</p>
         <p class="ws-profile">主催：<strong>内田愛美</strong>（バレエ教師）<br>「身体で遊んで表現する。『身体ってこんなに正直だったんだ！』発見と一緒に楽しみましょう。ダンス未経験の方歓迎。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">📖</div>
-        <p class="ws-name">ナラティブ絵本®︎（ミニ）</p>
+        <p class="ws-name">お守り絵本づくり<br>～写真を見ながら人生を振り返り、思い出を一冊の絵本に～</p>
         <p class="ws-age">15歳程度より参加可能</p>
-        <p class="ws-desc">自分の物語を絵本にする、語りと創造のワークショップ。</p>
-        <p class="ws-profile">［主催者プロフィール：お名前・活動内容・一言メッセージ］</p>
+        <p class="ws-desc">心理学×アートの「ナラティブ絵本®︎」ワークショップ。写真を手がかりに人生を振り返り、一冊のミニ絵本にまとめます。「人生の物語の再構成」を、理屈ではなく"体感"していただけます。</p>
+        <p class="ws-profile">主催：<strong>ナラティブ絵本®︎ファシリテーター</strong><br>「心の奥にある『言葉にならない感情』を、色や形、心の中のつぶやきとして、そっと絵本に映し出してみませんか？誰に見せるためでもない、あなた自身が明日からまた歩き出すための『お守り』となる一冊を、当日のファシリテーターが心を込めてサポートいたします。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">🎨</div>
-        <p class="ws-name">こども表現ワーク<br>「かいたり、みにつけたり、パチンパチン」</p>
+        <p class="ws-name">こども表現スペース</p>
         <p class="ws-age">子どものみ参加可能</p>
-        <p class="ws-desc">子どもが描いて、着て、感じる、のびのびとした表現の場。</p>
-        <p class="ws-profile">主催：<strong>ささきゆう</strong>（保育士・海を愛するダイバー）<br>「作品なんて気負わず、楽しんでみよう！」</p>
+        <p class="ws-desc">ママやパパがワークに参加したり鑑賞している間、お子様が過ごせるスペース。「やってみたい」「なんだこれ？」を満たすような関わりをします。お散歩にも出るかも。（託児ではないため、お子様の興味に合わせてのご利用でお願いします。）</p>
+        <p class="ws-profile">担当：<strong>ゆう</strong>（海が大好きなただの保育士）</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">🔥</div>
         <p class="ws-name">モヤモヤ燃やしちゃおう</p>
         <p class="ws-age">誰でも参加可（随時開催）</p>
         <p class="ws-desc">心のモヤモヤを言葉にして、一緒に解放するワーク。</p>
-        <p class="ws-profile">主催：<strong>広島の夏帆</strong>（教育とアート・心に潜る瞬間が大好き）<br>「さあ、モヤモヤに形を与えて、本当に燃やしちゃおう」</p>
+        <p class="ws-profile">主催：<strong>広島の夏帆</strong>（教育とアート・心に潜る瞬間が大好き）<br>「さあ、モヤモヤに形を与えて、本当に燃やしちゃおう。その先に感じるもの、新しいあなた。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">🍪</div>
         <p class="ws-name">問いかけクッキー屋さん</p>
         <p class="ws-age">誰でも参加可（随時開催）</p>
         <p class="ws-desc">実際に食べていただけます。友人・親子でいつもの私じゃない会話が始まっちゃう体験。</p>
-        <p class="ws-profile">主催：<strong>波木はなこ</strong>（現役大学生・超面白くて可愛くてかっこいいクッキーをつくっている）</p>
+        <p class="ws-profile">主催：<strong>波木はなこ</strong>（現役大学生・超面白くて可愛くてかっこいいクッキーをつくっている）<br>「実際に食べていただけます。友人と、親子と、いつもの私じゃない会話が始まっちゃう。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">💃</div>
@@ -677,7 +678,7 @@
         <p class="ws-name">ギター LIVE</p>
         <p class="ws-age">誰でも参加可（各日1回開催）</p>
         <p class="ws-desc">心に響くギターの音色でひとときの癒しを。</p>
-        <p class="ws-profile">主催：<strong>藤原勝熙</strong></p>
+        <p class="ws-profile">主催：<strong>藤原勝熙</strong>（プロコーチ／シンガーソングライター／俳優）<br>「この世界の美しさを歌とギターで表現します。吹き抜ける爽やかな風のように。」</p>
       </div>
     </div>
 
@@ -712,7 +713,7 @@
     <div class="section-divider fade-in"></div>
     <p class="body-text fade-in">
       展示…<strong>終日入場無料</strong>　自由に鑑賞いただけます<br>
-      ワークショップ…からだで感じるこころの気づきワーク、ナラティブ絵本®︎（ミニ）は<strong>事前予約・チケット制</strong>（大人1人 2,500円 ／ 大人1人と子ども2人まで 3,000円）
+      ワークショップ…「からだで感じる心の気づきワーク」「お守り絵本づくり」は<strong>事前予約・チケット制</strong>（大人1人 2,500円 ／ 大人1人と子ども2人まで 3,000円）
     </p>
     <div class="tt-cols fade-in" style="margin-top:2rem;">
       <!-- 6/20 -->
@@ -720,11 +721,11 @@
         <p class="tt-day-title">6月20日（土）</p>
         <p class="tt-info">10:00 開場　18:00 閉場</p>
         <div class="tt-row"><span class="tt-time">11:00–11:30</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
-        <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">体で遊んで感じるバレエワーク（10歳以上、1人でも親子でも）</span></div>
-        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">からだで感じる心の気づきバレエワーク（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上、1人でも親子でも）</span></div>
         <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">アイコミューズ　ダンシング アメージンググレイス</span></div>
         <p class="tt-anytime">
-          こども表現ワーク「かいたり、みにつけたり、パチンパチン」<br>
+          こども表現スペース<br>
           モヤモヤ燃やしちゃおう<br>
           哲学少女の問いかけクッキー<br>
           → 終日、随時開催
@@ -734,12 +735,12 @@
       <div>
         <p class="tt-day-title">6月21日（日）</p>
         <p class="tt-info">10:00 開場　18:00 閉場</p>
-        <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">体で遊んで感じるバレエワーク（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">からだで感じる心の気づきバレエワーク（10歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">13:00–13:30</span><span class="tt-event">toast アカペラLIVE</span></div>
         <div class="tt-row"><span class="tt-time">13:30–14:00</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
-        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">ナラティブ絵本®︎（ミニ）（15歳以上、1人でも親子でも）</span></div>
-        <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">toast　アカペラLIVE</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上、1人でも親子でも）</span></div>
         <p class="tt-anytime">
-          こども表現ワーク「かいたり、みにつけたり、パチンパチン」<br>
+          こども表現スペース<br>
           モヤモヤ燃やしちゃおう<br>
           哲学少女の問いかけクッキー<br>
           → 終日、随時開催
@@ -819,64 +820,6 @@
           私はプロコーチとして、家族との確執や怒りといった記憶に足を止められ、本来歩みたい人生を歩めずにいる方を多く見てきました。この痛みは、言葉や理論だけでは癒せません。必要なのは、「私は愛されていた」という揺るぎない痕跡に触れる体験であり、その証拠を集め直す、内省の旅です。<br><br>
           夏帆さんのアートプロジェクトは、父の作業着という「服」をトリガーに、写真と言葉で記憶を再構築し、過去の愛を再確認します。作品作りを通して、記憶の深部にある愛の痕跡を掘り起こす。これは、過去の自分を許し、未来を創造し直すための真摯で勇気あるプロセスです。<br><br>
           この展示は、来場者一人ひとりの心の奥にある「眠り続けた幼い自分」を抱きしめる鏡になるでしょう。あなたの記憶が癒され、人生の傷さえもが、実は愛の証だったと気づく瞬間が、この広島で生まれることを心から期待し、応援させていただきます。
-        </p>
-      </div>
-      <!-- 大中 -->
-      <div class="comment-card fade-in">
-        <div class="comment-person">
-          <div class="comment-icon"><img src="images/comment-onaka.jpg" alt="大中啓嗣さん"></div>
-          <div>
-            <p class="comment-name">大中 啓嗣 さま</p>
-          </div>
-        </div>
-        <p class="comment-text">
-          夏帆さんの展示を観るのは、覚悟が要る。いちばん近くていちばん遠い「家族」という存在に、真摯に向き合おうとする彼女の文章は、時として残酷だが、それ以上に優しい。<br><br>
-          後ろを振り返る為にも、前を向く為にも、覚悟が要ることが、夏帆さんの文章からは伝わってくる。「家族」に限らず、これほどまでに真摯に他者と、そして、なによりも自分自身と、向き合ったことが私にあっただろうか。<br><br>
-          文章を読み、写真を見つめ、夏帆さんの生き様を観ていたつもりが、気がつけば自分の生き様を見つめはじめている。夏帆さんの展示を観るのは、覚悟が要る。が、その覚悟だけが、生きてゆこうという意志へと私をつなげてゆく。
-        </p>
-      </div>
-      <!-- 坂田 -->
-      <div class="comment-card fade-in">
-        <div class="comment-person">
-          <div class="comment-icon"><img src="images/comment-kita.jpg" alt="坂田聖一郎さん"></div>
-          <div>
-            <p class="comment-name">坂田 聖一郎 さま</p>
-            <p class="comment-title">（株）ドラゴン教育革命 代表取締役 ／ プロコーチ養成講師</p>
-          </div>
-        </div>
-        <p class="comment-text">
-          私はアートが嫌いだ。昔から図工や美術が苦手だった。手先は不器用。人よりも時間がかかるが、その割に出来栄えは今ひとつ。いつしかアートは「私とは縁遠いもの」として決めつけていた。<br><br>
-          夏帆がこれまでどんな人生を歩んできたかは詳しくは分からない。でもきっと、アートが夏帆を救ってくれたはずだ。そして、アートを通して夏帆の人生に触れることができるはずだ。<br><br>
-          私はプロコーチ。対話を通してクライアントの人生に触れられる最高の仕事だ。夏帆はアーティスト。作品を通して彼女のあり方生き方に触れられる。夏帆の人生に触れたい。そう思った方はぜひ広島に足を運んでみてほしい。いや足を運んでください。いや行ってやってください。お願いします。
-        </p>
-      </div>
-      <!-- 大野 -->
-      <div class="comment-card fade-in">
-        <div class="comment-person">
-          <div class="comment-icon"><img src="images/comment-onosakata.jpg" alt="大野佐也加さん"></div>
-          <div>
-            <p class="comment-name">大野 佐也加 さま</p>
-            <p class="comment-title">声で人生を変える起業コーチ ／ Mrs &amp; Mr of the year 2025 徳島大会グランプリ</p>
-          </div>
-        </div>
-        <p class="comment-text">
-          人は絶望の淵に立たされた時、何を選択するのか？どんな淵に立たされても、私たちには選択する力があります。<br><br>
-          力強く、賢く、逞しく、私たちは「前を向ける」のです。そのことをこの個展で伝えています。<br><br>
-          そして、誰よりも苦しんできた人たちが、誰よりも前を向いてきたこの「広島」という街で開催することに、私は大きな意義があると感じています。
-        </p>
-      </div>
-      <!-- 宇崎 -->
-      <div class="comment-card fade-in">
-        <div class="comment-person">
-          <div class="comment-icon"><img src="images/comment-uzaki.jpg" alt="宇崎優子さん"></div>
-          <div>
-            <p class="comment-name">宇崎 優子 さま</p>
-          </div>
-        </div>
-        <p class="comment-text">
-          それまでほぼ接点のなかったなつほと、ひょんなことからZoomで話すことになった。「個展やりたいんだよね」そう言葉を紡ぐ彼女のエネルギーが本当に素敵で。初めましての画面越しに、私は精一杯のエールを送った。<br><br>
-          なつほの経験、感情、記憶がそのまま感じられる空間になると確信しています。なつほを通して、お越しくださったみなさまの記憶も癒されていくはずです。ぜひ、記憶を纏うなつほと仲間たちの愛に触れに来てください。<br><br>
-          微力ながら、パンフレットのデザインを担当させていただき、なつほの世界観を一緒に表現できたことを嬉しく感じています。なつほ、開催おめでとう！私も広島へ行きます！
         </p>
       </div>
     </div>
