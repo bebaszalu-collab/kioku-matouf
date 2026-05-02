@@ -25,7 +25,7 @@
       background: var(--white);
       color: var(--text);
       line-height: 1.9;
-      font-size: 16px;
+      font-size: 18px;
     }
 
     /* ─── リンク共通 ─── */
@@ -85,15 +85,16 @@
       text-transform: uppercase; opacity: .85;
     }
     .hero-title {
-      font-size: clamp(2.4rem,8vw,5.5rem);
-      font-weight: 400; color: #fff;
-      letter-spacing: .15em; line-height: 1.15;
-      text-shadow: 0 2px 30px rgba(0,0,0,.4);
+      font-size: clamp(1rem,3vw,1.4rem);
+      font-weight: 300; color: var(--mist);
+      letter-spacing: .3em; line-height: 1.5;
     }
     .hero-subtitle {
-      margin-top: 1rem;
-      font-size: clamp(.85rem,2.5vw,1.1rem);
-      color: var(--mist); letter-spacing: .28em; font-weight: 300;
+      margin-top: .6rem;
+      font-size: clamp(2.2rem,7vw,4.8rem);
+      color: #fff; letter-spacing: .12em; font-weight: 400;
+      line-height: 1.2;
+      text-shadow: 0 2px 30px rgba(0,0,0,.4);
     }
     .hero-divider {
       width: 48px; height: 1px;
@@ -101,13 +102,13 @@
       margin: 2rem auto; opacity: .8;
     }
     .hero-date {
-      font-size: clamp(1rem,3vw,1.3rem);
-      color: var(--foam); letter-spacing: .18em;
+      font-size: clamp(1.2rem,3.5vw,1.6rem);
+      color: #fff; letter-spacing: .18em; font-weight: 500;
     }
     .hero-venue {
       margin-top: .5rem;
-      font-size: clamp(.75rem,2vw,.9rem);
-      color: var(--mist); letter-spacing: .1em;
+      font-size: clamp(1rem,2.5vw,1.2rem);
+      color: var(--foam); letter-spacing: .1em;
     }
     .hero-free {
       margin-top: 1rem;
@@ -138,7 +139,7 @@
       color: var(--sky); text-transform: uppercase; margin-bottom: .6rem;
     }
     .section-title {
-      font-size: clamp(1.4rem,4vw,2rem);
+      font-size: clamp(1.6rem,4.5vw,2.3rem);
       font-weight: 400; letter-spacing: .06em;
       color: var(--navy); line-height: 1.4;
     }
@@ -314,7 +315,7 @@
     }
     .comment-name { font-size: .9rem; font-weight: 600; color: var(--navy); }
     .comment-title { font-size: .76rem; color: var(--sub); margin-top: .2rem; }
-    .comment-text { font-size: .88rem; color: var(--sub); line-height: 1.9; }
+    .comment-text { font-size: 1rem; color: var(--sub); line-height: 2; }
 
     /* ─── 記憶の解説 ─── */
     .memory-section { background: var(--white); }
@@ -338,6 +339,17 @@
       border-left: 4px solid var(--sky);
       margin: 2rem 0;
       line-height: 1.8;
+    }
+
+    /* ─── 来場者風景 ─── */
+    .visitor-photos-section { background: var(--navy); padding: 0; overflow: hidden; }
+    .visitor-photos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .visitor-photo-item { overflow: hidden; aspect-ratio: 3/4; }
+    .visitor-photo-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+    .visitor-photo-item:hover img { transform: scale(1.04); }
+    @media (max-width: 600px) {
+      .visitor-photos-grid { grid-template-columns: 1fr; }
+      .visitor-photo-item { aspect-ratio: 4/3; }
     }
 
     /* ─── 体験談 ─── */
@@ -510,6 +522,18 @@
     .faq-section .section-label { color: var(--mist); }
     .faq-section .section-divider { background: var(--gold); margin-left:auto; margin-right:auto; }
 
+    /* ─── アクセス ─── */
+    .access-section { background: var(--white); }
+    .access-map { width: 100%; height: 380px; border: 0; border-radius: 6px; display: block; margin-top: 2rem; }
+    .access-address {
+      margin-top: 1.4rem; padding: 1.2rem 1.6rem;
+      background: var(--foam); border-radius: 6px;
+      font-size: .97rem; color: var(--navy); line-height: 1.9;
+    }
+    .access-address strong { display: block; font-size: 1.05rem; letter-spacing: .05em; margin-bottom: .3rem; }
+    .access-address a { color: var(--sky); font-size: .88rem; }
+    @media (max-width: 600px) { .access-map { height: 280px; } }
+
     /* ─── フッター ─── */
     footer {
       background: var(--navy);
@@ -527,7 +551,7 @@
 
     /* ─── 本文テキスト ─── */
     .body-text {
-      font-size: clamp(.9rem,2.2vw,1rem);
+      font-size: clamp(1rem,2.4vw,1.15rem);
       color: var(--sub); line-height: 2.1;
     }
     .body-text + .body-text { margin-top: 1.2rem; }
@@ -542,8 +566,8 @@
   <img src="images/hero-main.jpg" alt="記憶を纏う メインビジュアル" class="hero-img">
   <div class="hero-light"></div>
   <p class="hero-badge">Event No.2 &nbsp;｜&nbsp; 2026.6.20–21</p>
-  <h1 class="hero-title">記憶を纏う</h1>
-  <p class="hero-subtitle">— 親子でたどる、記憶の展示 —</p>
+  <p class="hero-title">＃２『記憶を纏う』</p>
+  <h1 class="hero-subtitle">親子でたどる、記憶の展示</h1>
   <div class="hero-divider"></div>
   <p class="hero-date">2026年6月20日（土）〜 6月21日（日）</p>
   <p class="hero-venue">神奈川県 大和市 鶴間 1-9-17 &nbsp;BIG BLUE</p>
@@ -762,7 +786,7 @@
       作品参加の皆さまが何に共感し、何を求めて作品作りに飛び込んだのか——<br>
       『記憶を纏う』の根源的な考え方はコチラから。
     </p>
-    <a href="https://docs.google.com/document/d/1VfT80sHJkpp6zhNa1oap2Y8gP0zb-dceiQwdGuaqp1U/edit?usp=sharing"
+    <a href="project-roots.html"
        target="_blank" rel="noopener" class="cta-link fade-in">
       ▶ なぜ、これほどの強烈な記憶が、このプロジェクトで癒され得るのか。
     </a>
@@ -870,11 +894,25 @@
       『記憶を纏う』は<strong>癒しであり、祈りであり、再生の記録</strong>になり、そして、孫の代に引き継ぐ伝記になるのです。
     </p>
     <p class="fade-in" style="margin-top:1.2rem;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
-         target="_blank" rel="noopener" class="cta-link">
-        ▶ 実は、この『記憶を癒す』試みは2024年から実験を重ね、2回の展示を経ています。
-      </a>
+      ▶ 実は、この『記憶を癒す』試みは2024年から実験を重ね、2回の展示を経ています。
     </p>
+  </div>
+</section>
+
+<!-- ==============================
+     来場者風景フォト
+================================= -->
+<section class="visitor-photos-section">
+  <div class="visitor-photos-grid">
+    <div class="visitor-photo-item fade-in">
+      <img src="images/visitor-scene-1.jpg" alt="展示を鑑賞する来場者" />
+    </div>
+    <div class="visitor-photo-item fade-in">
+      <img src="images/visitor-scene-2.jpg" alt="展示作品を手に取る来場者" />
+    </div>
+    <div class="visitor-photo-item fade-in">
+      <img src="images/visitor-scene-3.jpg" alt="作品に感動する来場者" />
+    </div>
   </div>
 </section>
 
@@ -929,7 +967,7 @@
       </p>
     </div>
     <p style="margin-top:2rem;" class="fade-in">
-      <a href="https://docs.google.com/document/d/1XFonzHDln5Q6x6FAKZbLuJaxljC8aYMnUZpUqGKqdKI/edit?usp=sharing"
+      <a href="messages.html"
          target="_blank" rel="noopener" class="cta-link">
         ▶ ここに載せきれない各方面からの応援メッセージ・感想の言葉はこちら
       </a>
@@ -955,7 +993,7 @@
       <li>場が整えば『記憶セッション』も</li>
       <li>限定チャットにてアーカイブの視聴も可能</li>
     </ul>
-    <a href="https://docs.google.com/document/d/1XFonzHDln5Q6x6FAKZbLuJaxljC8aYMnUZpUqGKqdKI/edit?usp=sharing"
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform"
        target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);">
       こちらからどうぞ 👉 15人全ての作品が見れるオンライン鑑賞券はこちら
     </a>
@@ -1100,7 +1138,6 @@
     <div class="profile-box fade-in">
       <div>
         <p class="profile-org">ウロコドロップ</p>
-        <p class="profile-name">夏帆</p>
         <p class="profile-text">
           広島市安佐南区でアート企画を行う今回のメインモデル。広島女学院中高卒。広島大学にて、学びのデザインを研究。就職後、結婚、出産。しかし、娘を産んで1年6ヶ月後、自身の体調に異変が起こり、指定難病と診断を受ける。<br><br>
           「大切なことは生きているうちに」と決意。アートと心理学を横断し、家族や記憶のテーマを追求し始める。31年の人生で受け取った愛を、次世代に繋ぐべく記憶に向き合う。
@@ -1138,16 +1175,11 @@
     <h2 class="section-title fade-in">質問はすべてコチラで<br>対応いたします</h2>
     <div class="section-divider fade-in"></div>
     <p class="cta-note fade-in" style="color:rgba(220,238,249,.8);">
-      ご不明な点・ご相談は、専用チャットまたは公式LINEよりお気軽にどうぞ。
+      ご不明な点・ご相談は、専用チャットよりお気軽にどうぞ。
     </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
+    <a href="https://line.me/ti/g2/K_tgh43xAGzbGIPRBOVuxmoOSjquEv3D3C-6Ww?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
        target="_blank" rel="noopener" class="cta-link fade-in" style="color:var(--gold);font-size:1rem;">
       ▶ 『記憶を纏う』専用チャット・お問い合わせ
-    </a>
-    &nbsp;&nbsp;
-    <a href="https://line.me/ti/g2/K_tgh43xAGzbGIPRBOVuxmoOSjquEv3D3C-6Ww?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-       target="_blank" rel="noopener" class="cta-link fade-in" style="color:#06c755;font-size:1rem;">
-      ▶ 公式LINEはこちら
     </a>
   </div>
 </section>
@@ -1155,6 +1187,31 @@
 <!-- ==============================
      FOOTER
 ================================= -->
+<!-- ==============================
+     アクセス
+================================= -->
+<section class="access-section">
+  <div class="container">
+    <p class="section-label fade-in">Access</p>
+    <h2 class="section-title fade-in">会場へのアクセス</h2>
+    <div class="section-divider fade-in"></div>
+    <iframe
+      class="access-map fade-in"
+      src="https://maps.google.com/maps?q=%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E5%A4%A7%E5%92%8C%E5%B8%82%E9%B6%B4%E9%96%931-9-17+BIGBLUE&output=embed"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <div class="access-address fade-in">
+      <strong>BIG BLUE（ビッグブルー）</strong>
+      〒242-0005　神奈川県大和市鶴間1－9－17<br>
+      <a href="https://maps.google.com/?q=神奈川県大和市鶴間1-9-17+BIGBLUE" target="_blank" rel="noopener">
+        Google マップで開く →
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <p class="f-org">ウロコドロップ</p>
   <p>イベント No.2 &nbsp;「記憶を纏う」&nbsp; 2026.6.20–21 &nbsp;神奈川県大和市 BIG BLUE</p>
