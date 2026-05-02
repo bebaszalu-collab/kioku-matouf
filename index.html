@@ -63,6 +63,7 @@
       object-fit: cover;
       opacity: .22;
       mix-blend-mode: luminosity;
+      pointer-events: none;
     }
     .hero::after {
       content: '';
@@ -121,6 +122,7 @@
       border-radius: 2px;
     }
     .hero-cta {
+      position: relative; z-index: 2;
       margin-top: 2.5rem;
       display: inline-block;
       padding: .9em 2.8em;
