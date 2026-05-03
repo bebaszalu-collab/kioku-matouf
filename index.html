@@ -422,6 +422,11 @@
     .fund-bars { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
     .fund-row { display: flex; align-items: center; gap: 1rem; }
     .fund-label { font-size: .85rem; color: var(--sub); width: 10rem; flex-shrink: 0; }
+    @media (max-width: 480px) {
+      .fund-row { flex-wrap: wrap; gap: .4rem; }
+      .fund-label { width: 100%; }
+      .fund-bar-wrap { flex: 1; min-width: 0; }
+    }
     .fund-bar-wrap { flex: 1; background: var(--foam); border-radius: 99px; height: 14px; overflow: hidden; }
     .fund-bar { height: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--ocean), var(--sky)); }
     .fund-pct { font-size: .85rem; font-weight: 600; color: var(--ocean); width: 3rem; text-align: right; }
@@ -480,6 +485,7 @@
     }
     .member-item {
       font-size: .85rem; color: var(--sub);
+      text-align: center;
       padding: .8rem 1rem;
       background: var(--foam);
       border-radius: 4px; line-height: 1.7;
@@ -570,10 +576,10 @@
   <div class="hero-light"></div>
   <p class="hero-badge">Event No.2 &nbsp;｜&nbsp; 2026.6.20–21</p>
   <p class="hero-title">＃２『記憶を纏う』</p>
-  <h1 class="hero-subtitle">親子でたどる、記憶の展示</h1>
+  <h1 class="hero-subtitle">親子でたどる、<br>記憶の展示</h1>
   <div class="hero-divider"></div>
-  <p class="hero-date">2026年6月20日（土）〜 6月21日（日）</p>
-  <p class="hero-venue">神奈川県 大和市 鶴間 1-9-17 &nbsp;BIG BLUE</p>
+  <p class="hero-date">2026年6月20日（土）〜<br>6月21日（日）</p>
+  <p class="hero-venue">神奈川県大和市鶴間1-9-17&nbsp;<span style="white-space:nowrap;">BIG BLUE</span></p>
   <p class="hero-venue">小田急江ノ島線 鶴間駅下車 徒歩3分</p>
   <span class="hero-free">入場無料</span>
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
@@ -586,7 +592,7 @@
 <section class="story-section">
   <div class="container">
     <div class="caution-bar fade-in">
-      ▶ 人によっては少し苦しくなるかも。読み進めるにあたっては、ご注意ください。
+      ▶ 人によっては少し苦しくなるかも。<br><span style="white-space:nowrap;">読み進めるにあたっては、ご注意ください。</span>
     </div>
     <p class="section-label fade-in">Story</p>
     <h2 class="section-title fade-in">父の作業着から始まる、<br>家族の再生の物語。</h2>
@@ -594,9 +600,9 @@
     <p class="body-text fade-in" style="margin-bottom:1.5rem;">
       本展は、なつほが、20代の頃の父の作業着を実際に身にまとい、記憶と向き合いながら撮影した写真作品から始まりました。「私も書いてみたい」そんな言葉が集まり、合同企画展という形で全国で開催するに至りました。参加者それぞれが親の服を着ること、過去の場所をめぐること、言葉として想いを書き残すことを通して、「親との関係」や「自分自身」を見つめ直した【記録】を展示する写真やエッセイの展示です。
     </p>
-    <p class="body-text fade-in" style="font-size:.88rem;letter-spacing:.15em;margin-bottom:.5rem;">今から語られるのは、父の作業着から始まる、家族の再生の物語。</p>
+    <p class="body-text fade-in" style="font-size:.88rem;letter-spacing:.15em;margin-bottom:.5rem;"><span style="white-space:nowrap;">今から語られるのは、父の作業着から始まる、</span><br>家族の再生の物語。</p>
     <p style="text-align:center;color:var(--mist);letter-spacing:.4em;margin-bottom:1.8rem;" class="fade-in">―――――――――</p>
-    <p class="story-quote fade-in">「お前、お前！！」<br>体がすくんで、その後、衝撃が走る。</p>
+    <p class="story-quote fade-in">「お前、お前！！」<br><span style="white-space:nowrap;">体がすくんで、その後、衝撃が走る。</span></p>
     <p class="body-text fade-in">
       憎いという気持ちと、徹底的に嫌ってやるという決意。<br>
       思い返せば思い返すほど、胃がよじれるような感覚と、<br>
@@ -621,22 +627,22 @@
 <section class="banner-section">
   <div class="container">
     <p class="section-label fade-in">From Hiroshima to Kanagawa</p>
-    <h2 class="section-title fade-in">広島で100人が涙した記憶、ふたたび。</h2>
+    <h2 class="section-title fade-in">広島で100人が涙した<br>記憶、ふたたび。</h2>
     <div class="section-divider fade-in"></div>
     <div class="exhibition-photos fade-in">
       <img src="images/exhibition-1.jpg" alt="広島展示の様子①">
     </div>
 
     <p class="banner-body fade-in">
-      地方都市・広島で100人を超える人々が涙した記憶の展示。<br>
-      6月20日（土）21日（日）神奈川県大和市で<strong>超体験型にグレードアップ</strong>して再び！<br><br>
-      昨年12月、広島で行われた展示では14名の親友にも語られない人生の物語が集まりました。
-      写真・文字・造形…それぞれから愛の複雑さと尊さ、自分や家族への慈しみを感じさせてもらい、
+      地方都市・広島で100人を超える人々が<br>涙した記憶の展示。<br>
+      6月20日（土）21日（日）神奈川県大和市で<br><strong>超体験型にグレードアップ</strong>して再び！<br><br>
+      昨年12月に広島で行われた展示会では、<br>14名の方が親友にすら語ったことがない<br>人生の物語を作品として表現して下さりました。<br>
+      写真・文字・造形…それぞれの愛の複雑さと尊さ、<br>自分や家族への慈しみを感じさせてもらい、<br>
       何度も心を揺さぶられました。<br><br>
-      しかし、私の中には1つの大きな後悔が残っています。<br>
-      それは——<strong>「気づいても、広げ・解釈し・表現できる場がなかった」</strong>こと。<br>
-      さらに、ギャラリーという性質上、お子さんと来場いただいてもゆっくり鑑賞できる環境ではなかった。<br><br>
-      そこで今回は大きく新しい試みを取り入れました！
+      しかし、私の中には1つの<br>大きな後悔が残っています。<br>
+      それは——<strong>「気づいても、広げ・解釈し・<br>表現できる場がなかった」</strong>こと。<br>
+      さらに、ギャラリーという性質上、<br>お子さんと来場いただいても<br>ゆっくり鑑賞できる環境ではなかった。<br><br>
+      そこで今回は大きく<br>新しい試みを取り入れました！
     </p>
   </div>
 </section>
@@ -654,7 +660,7 @@
       感じ・悩み・受け止め・表現することに特化した<strong>５つのワークショップ</strong>を同時開催いたします。<br><br>
       『記憶を纏う』では、あえて鑑賞者を鑑賞者のままでは帰しません。<br>
       <strong>鑑賞者から表現者へ</strong>と、ゆるやかに、しかし確実に変化しうる場所として設計しました。<br>
-      ここにくれば、何かが変わる。そんなパワースポットのような場所で、お待ちしています。
+      ここに来れば、何かが変わる。そんなパワースポットのような場所でお待ちしています。
     </p>
 
     <div class="ws-grid">
@@ -662,14 +668,14 @@
         <div class="ws-icon">🩰</div>
         <p class="ws-name">からだで感じる心の気づきワーク</p>
         <p class="ws-age">10歳程度より参加可。定員8名</p>
-        <p class="ws-desc">バレエの先生による、「からだで感じる心の気づきワーク」。からだで遊んで感じて、こころの気づきを楽しむ体験型ワークショップ。</p>
+        <p class="ws-desc">バレエの先生による、「からだで感じる心の気づきワーク」。からだで遊んで感じて、こころの気づきを楽しむ体験型ワークショップ。（親子でも、お一人でも）</p>
         <p class="ws-profile">主催：<strong>内田愛美</strong>（バレエ教師）<br>「身体で遊んで表現する。『身体ってこんなに正直だったんだ！』発見と一緒に楽しみましょう。ダンス未経験の方歓迎。」</p>
       </div>
       <div class="ws-card fade-in">
         <div class="ws-icon">📖</div>
-        <p class="ws-name">お守り絵本づくり<br>～写真を見ながら人生を振り返り、思い出を一冊の絵本に～</p>
+        <p class="ws-name">お守り絵本づくり<br>～写真を見ながら人生を振り返り、<br>思い出を一冊の絵本に～</p>
         <p class="ws-age">15歳程度より参加可能</p>
-        <p class="ws-desc">心理学×アートの「ナラティブ絵本®︎」ワークショップ。写真を手がかりに人生を振り返り、一冊のミニ絵本にまとめます。「人生の物語の再構成」を、理屈ではなく"体感"していただけます。</p>
+        <p class="ws-desc">心理学×アートの「ナラティブ絵本®︎」ワークショップ。写真を手がかりに人生を振り返り、一冊のミニ絵本にまとめます。「人生の物語の再構成」を、<span style="white-space:nowrap;">理屈ではなく"体感"していただけます。</span></p>
         <p class="ws-profile">主催：<strong>ナラティブ絵本®︎ファシリテーター</strong><br>「心の奥にある『言葉にならない感情』を、色や形、心の中のつぶやきとして、そっと絵本に映し出してみませんか？誰に見せるためでもない、あなた自身が明日からまた歩き出すための『お守り』となる一冊を、当日のファシリテーターが心を込めてサポートいたします。」</p>
       </div>
       <div class="ws-card fade-in">
@@ -690,7 +696,7 @@
         <div class="ws-icon">🍪</div>
         <p class="ws-name">問いかけクッキー屋さん</p>
         <p class="ws-age">誰でも参加可（随時開催）</p>
-        <p class="ws-desc">実際に食べていただけます。友人・親子でいつもの私じゃない会話が始まっちゃう体験。</p>
+        <p class="ws-desc">実際に食べていただけます。友人・親子でいつもの私じゃない<span style="white-space:nowrap;">会話が始まっちゃう体験。</span></p>
         <p class="ws-profile">主催：<strong>波木はなこ</strong>（現役大学生・超面白くて可愛くてかっこいいクッキーをつくっている）<br>「実際に食べていただけます。友人と、親子と、いつもの私じゃない会話が始まっちゃう。」</p>
       </div>
       <div class="ws-card fade-in">
@@ -736,11 +742,11 @@
 <section class="tt-section">
   <div class="container">
     <p class="section-label fade-in">Schedule</p>
-    <h2 class="section-title fade-in">展示・ワークショップ タイムスケジュール</h2>
+    <h2 class="section-title fade-in">展示・ワークショップ<br>タイムスケジュール</h2>
     <div class="section-divider fade-in"></div>
     <p class="body-text fade-in">
-      展示…<strong>終日入場無料</strong>　自由に鑑賞いただけます<br>
-      ワークショップ…「からだで感じる心の気づきワーク」「お守り絵本づくり」は<strong>事前予約・チケット制</strong>（大人1人 2,500円 ／ 大人1人と子ども2人まで 3,000円）
+      展示…<strong>終日入場無料</strong><br>自由に鑑賞いただけます<br>
+      ワークショップ…<br>「からだで感じる心の気づきワーク」<br>「お守り絵本づくり」は<strong>事前予約・チケット制</strong>
     </p>
     <div class="tt-cols fade-in" style="margin-top:2rem;">
       <!-- 6/20 -->
@@ -749,7 +755,7 @@
         <p class="tt-info">10:00 開場　18:00 閉場</p>
         <div class="tt-row"><span class="tt-time">11:00–11:30</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
         <div class="tt-row"><span class="tt-time">12:30–14:00</span><span class="tt-event">からだで感じる心の気づきバレエワーク（10歳以上、1人でも親子でも）</span></div>
-        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上）</span></div>
         <div class="tt-row"><span class="tt-time">17:00–17:40</span><span class="tt-event">アイコミューズ　ダンシング アメージンググレイス</span></div>
         <p class="tt-anytime">
           こども表現スペース<br>
@@ -765,7 +771,7 @@
         <div class="tt-row"><span class="tt-time">11:30–13:00</span><span class="tt-event">からだで感じる心の気づきバレエワーク（10歳以上、1人でも親子でも）</span></div>
         <div class="tt-row"><span class="tt-time">13:00–13:30</span><span class="tt-event">toast アカペラLIVE</span></div>
         <div class="tt-row"><span class="tt-time">13:30–14:00</span><span class="tt-event">藤原勝熙 ギターLIVE</span></div>
-        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上、1人でも親子でも）</span></div>
+        <div class="tt-row"><span class="tt-time">14:15–16:00</span><span class="tt-event">お守り絵本づくり（15歳以上）</span></div>
         <p class="tt-anytime">
           こども表現スペース<br>
           モヤモヤ燃やしちゃおう<br>
@@ -783,10 +789,10 @@
 <section style="background:var(--foam);padding:4rem 1.5rem;">
   <div class="container text-center">
     <p class="section-label fade-in">Artists</p>
-    <h2 class="section-title fade-in">プロジェクトの根源と作家たち</h2>
+    <h2 class="section-title fade-in">プロジェクトの根源と<br>作家たち</h2>
     <div class="section-divider center fade-in"></div>
     <p class="body-text fade-in" style="margin:0 auto 2rem;max-width:600px;">
-      作品参加の皆さまが何に共感し、何を求めて作品作りに飛び込んだのか——<br>
+      作品参加の皆様が何に共感し、何を求めて作品作りに飛び込んだのか——<br>
       『記憶を纏う』の根源的な考え方はコチラから。
     </p>
     <a href="project-roots.html"
@@ -822,7 +828,7 @@
         <div class="comment-person">
           <div class="comment-icon"><img src="images/comment-sakata.jpg" alt="喜多恒介さん"></div>
           <div>
-            <p class="comment-name">喜多 恒介 さま</p>
+            <p class="comment-name">喜多 恒介 様</p>
             <p class="comment-title">一般社団法人 高校生みらいラボ 代表 ／ （株）キタイエ エグゼクティブコーチ</p>
           </div>
         </div>
@@ -837,7 +843,7 @@
         <div class="comment-person">
           <div class="comment-icon"><img src="images/comment-akao.jpg" alt="koh Akaoさん"></div>
           <div>
-            <p class="comment-name">koh Akao さま</p>
+            <p class="comment-name">koh Akao 様</p>
             <p class="comment-title">ライフコーチ ／ 写真家</p>
           </div>
         </div>
@@ -958,12 +964,12 @@
 <section class="safety-section">
   <div class="container">
     <p class="section-label fade-in">Safety</p>
-    <h2 class="section-title fade-in">記憶に触れたり表現することは<br>怖くないのですか？</h2>
+    <h2 class="section-title fade-in">記憶に触れたり<br>表現することは<br>怖くないのですか？</h2>
     <div class="section-divider fade-in"></div>
     <div class="safety-box fade-in">
       <p>
         確かに、人によっては、ご自身の経験と重ね合わせて、様々な想いを感じられる可能性がございます。<br><br>
-        みなさまの心理的安全性と、ご自身の記憶に触れるという挑戦へのスペシャルフォローとして——<br>
+        みな様の心理的安全性と、ご自身の記憶に触れるという挑戦へのスペシャルフォローとして——<br>
         <strong>会期終了から1週間、専門のカウンセラーによる相談窓口を設置いたします。</strong><br><br>
         会場で感じたこと、言葉にならなかった思いを、安心できる場でお話しいただけます。<br>
         詳細は会場にてご案内、または公式LINEよりお気軽にお問い合わせください。
@@ -1009,7 +1015,7 @@
 <section class="support-section">
   <div class="container">
     <p class="section-label fade-in">Support</p>
-    <h2 class="section-title fade-in">一緒に育てるサポーター様も<br>募集しております。</h2>
+    <h2 class="section-title fade-in" style="font-size:clamp(1.2rem,4.5vw,2.3rem);">一緒に育てるサポーター様も<br>募集しております。</h2>
     <div class="section-divider fade-in"></div>
     <div class="support-box fade-in">
       <p>
@@ -1037,8 +1043,18 @@
       </div>
       <div class="next-card fade-in">
         <p class="next-no">EXHIBITION NO.4</p>
-        <p class="next-title">兵庫県 明石市</p>
+        <p class="next-title">和歌山県</p>
         <p class="next-info">2027年6月 予定</p>
+      </div>
+      <div class="next-card fade-in">
+        <p class="next-no">EXHIBITION NO.5</p>
+        <p class="next-title">広島県</p>
+        <p class="next-info">2027年12月 予定</p>
+      </div>
+      <div class="next-card fade-in">
+        <p class="next-no">EXHIBITION NO.6</p>
+        <p class="next-title">兵庫県 明石市</p>
+        <p class="next-info">2028年6月 予定</p>
       </div>
     </div>
   </div>
@@ -1083,7 +1099,7 @@
     <p class="cta-note fade-in">
       もし、あなたの中にも「まだ癒えていない記憶」があるのなら。<br>
       あなたの支援が、あなたの物語が、「誰かの記憶を癒す灯」になります。<br><br>
-      家計の解説書でもある「記憶」を、子に、孫に継いでいきましょう。
+      家族の解説書でもある「記憶」を、子に、孫に継いでいきましょう。
     </p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScfHe1KFG_vvDngJ-f3_ZCjMGtXxyFpIaJ5er7nLt7ON-SHwQ/viewform?usp=header"
        target="_blank" rel="noopener" class="cta-btn fade-in">
@@ -1098,21 +1114,21 @@
 <section class="member-section">
   <div class="container">
     <p class="section-label fade-in">Thanks</p>
-    <h2 class="section-title fade-in">個展に向けて背中を押してくださった<br>サポートメンバーの皆さま</h2>
+    <h2 class="section-title fade-in">個展に向けて背中を押してくださった<br>サポートメンバーの皆様</h2>
     <div class="section-divider fade-in"></div>
-    <p class="body-text fade-in">心より感謝いたします。みなさまの「もちろん助けるよ！」の言葉に何度救われたかわかりません。</p>
+    <p class="body-text fade-in">心より感謝いたします。皆様の「もちろん助けるよ！」の言葉に何度救われたかわかりません。</p>
     <div class="member-grid fade-in">
       <div class="member-item has-photo" style="text-align:center;">
-        <div class="member-photo"><img src="images/member-sasa.jpg" alt="SaSaさま"></div>
-        📷 SaSaさま／思い出写真家<a href="https://www.instagram.com/sasaphoto0801" target="_blank" rel="noopener">@sasaphoto0801</a>
+        <div class="member-photo"><img src="images/member-sasa.jpg" alt="SaSa様"></div>
+        📷 SaSa様／思い出写真家<a href="https://www.instagram.com/sasaphoto0801" target="_blank" rel="noopener">@sasaphoto0801</a>
       </div>
       <div class="member-item has-photo" style="text-align:center;">
-        <div class="member-photo"><img src="images/member-shimizu.jpg" alt="清水翔平さま"></div>
-        📣 清水翔平さま／淡路島のカメラマン<a href="https://www.instagram.com/shohei.shimizu.216" target="_blank" rel="noopener">@shohei.shimizu.216</a>
+        <div class="member-photo"><img src="images/member-shimizu.jpg" alt="清水翔平様"></div>
+        📣 清水翔平様／淡路島のカメラマン<a href="https://www.instagram.com/shohei.shimizu.216" target="_blank" rel="noopener">@shohei.shimizu.216</a>
       </div>
       <div class="member-item has-photo" style="text-align:center;">
-        <div class="member-photo"><img src="images/member-nakamura.jpg" alt="中村一昭さま"></div>
-        📣 中村一昭さま／広島の老舗写真家<a href="https://www.instagram.com/amuse_photo_studio" target="_blank" rel="noopener">@amuse_photo_studio</a>
+        <div class="member-photo"><img src="images/member-nakamura.jpg" alt="中村一昭様"></div>
+        📣 中村一昭様／広島の老舗写真家<a href="https://www.instagram.com/amuse_photo_studio" target="_blank" rel="noopener">@amuse_photo_studio</a>
       </div>
       <div class="member-item">📣 マイケル様／英語発信・理念サポート<a href="https://www.instagram.com/eigo.michael" target="_blank" rel="noopener">@eigo.michael</a></div>
       <div class="member-item">📣 ちる様／フライヤーデザイン<a href="https://www.instagram.com/chill.m.c" target="_blank" rel="noopener">@chill.m.c</a></div>
@@ -1120,12 +1136,12 @@
       <div class="member-item">📣 おかりな様／プロモーション動画制作<a href="https://www.instagram.com/okarina_lifecoach" target="_blank" rel="noopener">@okarina_lifecoach</a></div>
       <div class="member-item">📣 トラ様／プロジェクトマネジメント<a href="https://www.instagram.com/mama_gohan_tora" target="_blank" rel="noopener">@mama_gohan_tora</a></div>
       <div class="member-item">📣 のんじゃー様／海外向け告知制作</div>
-      <div class="member-item">📣 三角悠花さま／プレスリリース<a href="https://www.instagram.com/flower_career" target="_blank" rel="noopener">@flower_career</a></div>
+      <div class="member-item">📣 三角悠花様／プレスリリース<a href="https://www.instagram.com/flower_career" target="_blank" rel="noopener">@flower_career</a></div>
       <div class="member-item">📣 ともな様／案内文校正<a href="https://www.instagram.com/tomona_mind" target="_blank" rel="noopener">@tomona_mind</a></div>
       <div class="member-item">📣 さやちゃん様／全体案内文校正<a href="https://www.instagram.com/sayaka_8_16" target="_blank" rel="noopener">@sayaka_8_16</a></div>
-      <div class="member-item">📣 道上里奈さま／Peatix管理<a href="https://www.instagram.com/rina.rainbowrainbow" target="_blank" rel="noopener">@rina.rainbowrainbow</a></div>
-      <div class="member-item">📣 知念諒さま／メンタルサポート<a href="https://www.instagram.com/ryo.chinen.79" target="_blank" rel="noopener">@ryo.chinen.79</a></div>
-      <div class="member-item">📣 熊谷加菜さま／プロモーション素材</div>
+      <div class="member-item">📣 道上里奈様／Peatix管理<a href="https://www.instagram.com/rina.rainbowrainbow" target="_blank" rel="noopener">@rina.rainbowrainbow</a></div>
+      <div class="member-item">📣 知念諒様／メンタルサポート<a href="https://www.instagram.com/ryo.chinen.79" target="_blank" rel="noopener">@ryo.chinen.79</a></div>
+      <div class="member-item">📣 熊谷加菜様／プロモーション素材</div>
       <div class="member-item has-photo" style="text-align:center;">
         <div class="member-photo"><img src="images/member-sato.jpg" alt="佐藤慎一郎"></div>
         📣 佐藤慎一郎／LP制作<a href="https://www.instagram.com/ka1ch00/" target="_blank" rel="noopener">@ka1ch00</a>
