@@ -40,7 +40,15 @@
     .message-card .name {
       font-size: .85rem; color: var(--sky); letter-spacing: .1em;
       font-weight: 600; margin-bottom: .6rem;
+      display: flex; flex-direction: row; align-items: center; gap: .8rem; flex-wrap: wrap;
+    }
+    .message-card .name-text {
       display: flex; flex-direction: column; gap: .1rem;
+    }
+    .message-card .name-photo {
+      width: 52px; height: 52px; border-radius: 50%;
+      object-fit: cover; flex-shrink: 0;
+      border: 2px solid var(--gold);
     }
     .message-card .name .title {
       font-size: .78rem; color: var(--sub); font-weight: 400; letter-spacing: .05em;
@@ -76,7 +84,10 @@
   <div class="divider"></div>
 
   <div class="message-card">
-    <div class="name">📣 宇崎 優子 さま</div>
+    <div class="name">
+      <img src="images/comment-uzaki.jpg" alt="宇崎優子さま" class="name-photo">
+      <div class="name-text">📣 宇崎 優子 さま</div>
+    </div>
     <p class="body">それまでほぼ接点のなかったなつほと、ひょんなことからZoomで話すことになった。「個展やりたいんだよね」そう言葉を紡ぐ彼女のエネルギーが本当に素敵で。初めましての画面越しに、私は精一杯のエールを送った。
 
 なつほの経験、感情、記憶がそのまま感じられる空間になると確信しています。なつほを通して、お越しくださったみなさまの記憶も癒されていくはずです。ぜひ、記憶を纏うなつほと仲間たちの愛に触れに来てください。
@@ -87,7 +98,10 @@
   </div>
 
   <div class="message-card">
-    <div class="name">📣 大中 啓嗣 さま</div>
+    <div class="name">
+      <img src="images/comment-onaka.jpg" alt="大中啓嗣さま" class="name-photo">
+      <div class="name-text">📣 大中 啓嗣 さま</div>
+    </div>
     <p class="body">夏帆さんの展示を観るのは、覚悟が要る。
 いちばん近くていちばん遠い「家族」という存在に、真摯に向き合おうとする彼女の文章は、時として残酷だが、それ以上に優しい。
 
@@ -117,8 +131,10 @@
 
   <div class="message-card">
     <div class="name">
-      📣 大野 佐也加 さま
-      <span class="title">声で人生を変える起業コーチ／Mrs &amp; Mr of the year 2025 徳島大会グランプリ</span>
+      <img src="images/comment-onosakata.jpg" alt="大野佐也加さま" class="name-photo">
+      <div class="name-text">📣 大野 佐也加 さま
+        <span class="title">声で人生を変える起業コーチ／Mrs &amp; Mr of the year 2025 徳島大会グランプリ</span>
+      </div>
     </div>
     <p class="body">人は絶望の淵に立たされた時、何を選択するのか？
 どんな淵に立たされても、私たちには選択する力があります。
@@ -131,8 +147,10 @@
 
   <div class="message-card">
     <div class="name">
-      📣 坂田 聖一郎 さま
-      <span class="title">（株）ドラゴン教育革命 代表取締役／一般社団法人こどものえがお 代表理事／プロコーチ養成講師・ビジネスパートナー養成講師</span>
+      <img src="images/comment-kita.jpg" alt="坂田聖一郎さま" class="name-photo">
+      <div class="name-text">📣 坂田 聖一郎 さま
+        <span class="title">（株）ドラゴン教育革命 代表取締役／一般社団法人こどものえがお 代表理事／プロコーチ養成講師・ビジネスパートナー養成講師</span>
+      </div>
     </div>
     <p class="body">私はアートが嫌いだ。昔から図工や美術が苦手だった。手先は不器用。人よりも時間がかかるが、その割に出来栄えは今ひとつ。いつしかアートは「私とは縁遠いもの」として決めつけていた。
 
